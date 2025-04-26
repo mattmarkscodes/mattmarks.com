@@ -1,6 +1,6 @@
 /*
 Author: Matt Marks
-Version: 2023.09.02
+Version: 2025.04.25
 URL: https://github.com/mattmarkscodes/mattmarks.codes
 */
 
@@ -13,34 +13,24 @@ button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=
   src: url(font/PlayfairDisplay-VariableFont_wght.ttf);
 }
 
-body 										{ font-family: "Playfair", serif; margin: 0; background: #fff; font-size: 1.6em; }
-.wrap 										{ box-sizing: border-box; max-width: 1200px; margin: 6em auto; }
+body 										{ font-family: "Playfair", serif; margin: 0; background: #111; font-size: 1.6em; }
+.wrap 										{ box-sizing: border-box; max-width: 1200px; margin: 5em auto; }
 
-@keyframes fade { from {color: #fff;} to {color: #333;} }
-@-webkit-keyframes fade { from {color: #fff;} to {color: #333;} }
+@keyframes fade { from {color: #111;} to {color: #fff;} }
+@-webkit-keyframes fade { from {color: #111;} to {color: #fff;} }
 
-#intro h1 									{ text-align: left; font-size: 120%; color: #333; font-weight: 500; line-height:1.5em;
+#intro h1 									{ text-align: left; font-size: 120%; color: #fff; font-weight: 500; line-height:1.5em;
 												animation: fade;
-												animation-duration: 2s;
+												animation-duration: 3s;
 												-webkit-animation-name: fade;
-												-webkit-animation-duration: 2s; }
-#intro h2									{ text-align: left; font-size: 100%; color: #333; font-weight: 400; line-height:1em;
+												-webkit-animation-duration: 3s; }
+#intro h2									{ text-align: left; font-size: 100%; color: #fff; font-weight: 400; line-height:1em;
 												animation: fade;
-												animation-duration: 2s;
+												animation-duration: 3s;
 												-webkit-animation-name: fade;
-												-webkit-animation-duration: 2s; }
-#intro h3									{ text-align: left; font-size: 100%; color: #333; font-weight: 400; line-height:1em;
+												-webkit-animation-duration: 3s; }
+#intro h3									{ text-align: left; font-size: 100%; color: #fff; font-weight: 400; line-height:1em;
 												animation: fade;
-												animation-duration: 2s;
+												animation-duration: 3s;
 												-webkit-animation-name: fade;
-												-webkit-animation-duration: 2s; }
-												
-main {     
-	margin-top:-5em; 
-	width: 100%;
-    overflow: hidden;
-    /* Magic */
-    display: flex;
-    align-items: center; /* vertical */
-    justify-content: center; /* horizontal */ }
-main img { margin-left:10em; }
+												-webkit-animation-duration: 3s; }
