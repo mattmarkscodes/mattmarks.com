@@ -34,9 +34,19 @@ body 										{ font-family: "Playfair", serif; margin: 0; background: #ffffff;
 												animation-duration: 3s;
 												-webkit-animation-name: fade;
 												-webkit-animation-duration: 3s; }
+#intro h3.contact								{ text-align: right; }
 												
 												
-/* Dark mode styles */
+												
+/* iPhone */
+@media screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+
+#intro h3.contact								{ text-align: left; }
+
+}
+												
+												
+/* Dark */
 @media (prefers-color-scheme: dark) {
 
 body 										{ background: #111111; }
