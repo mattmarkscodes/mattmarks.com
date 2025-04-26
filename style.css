@@ -13,24 +13,37 @@ button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=
   src: url(font/PlayfairDisplay-VariableFont_wght.ttf);
 }
 
-body 										{ font-family: "Playfair", serif; margin: 0; background: #111; font-size: 1.6em; }
+body 										{ font-family: "Playfair", serif; margin: 0; background: #ffffff; font-size: 1.6em; }
 .wrap 										{ box-sizing: border-box; max-width: 1200px; margin: 5em auto; }
 
-@keyframes fade { from {color: #111;} to {color: #fff;} }
-@-webkit-keyframes fade { from {color: #111;} to {color: #fff;} }
+@keyframes fade { from {color: #ffffff;} to {color: #111111;} }
+@-webkit-keyframes fade { from {color: #ffffff;} to {color: #111111;} }
 
-#intro h1 									{ text-align: left; font-size: 120%; color: #fff; font-weight: 500; line-height:1.5em;
+#intro h1 									{ text-align: left; font-size: 120%; color: #111111; font-weight: 500; line-height:1.5em;
 												animation: fade;
 												animation-duration: 3s;
 												-webkit-animation-name: fade;
 												-webkit-animation-duration: 3s; }
-#intro h2									{ text-align: left; font-size: 100%; color: #fff; font-weight: 400; line-height:1em;
+#intro h2									{ text-align: left; font-size: 100%; color: #111111; font-weight: 400; line-height:1em;
 												animation: fade;
 												animation-duration: 3s;
 												-webkit-animation-name: fade;
 												-webkit-animation-duration: 3s; }
-#intro h3									{ text-align: left; font-size: 100%; color: #fff; font-weight: 400; line-height:1em;
+#intro h3									{ text-align: left; font-size: 100%; color: #111111; font-weight: 400; line-height:1em;
 												animation: fade;
 												animation-duration: 3s;
 												-webkit-animation-name: fade;
 												-webkit-animation-duration: 3s; }
+												
+												
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+
+body 										{ background: #111111; }
+@keyframes fade { from {color: #111111;} to {color: #ffffff;} }
+@-webkit-keyframes fade { from {color: #111111;} to {color: #ffffff;} }
+#intro h1 									{ color: #ffffff; }
+#intro h2 									{ color: #ffffff; }
+#intro h3 									{ color: #ffffff; }
+
+}
