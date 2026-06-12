@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>World Cup Group Picks</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">2026 World Cup</p>
+        <h1>Group Picks</h1>
+      </div>
+      <div class="summary-strip" aria-label="Prediction summary">
+        <div>
+          <strong id="person-count">0</strong>
+          <span>colleagues</span>
+        </div>
+        <div>
+          <strong id="pick-count">0</strong>
+          <span>top-two picks</span>
+        </div>
+        <div>
+          <strong id="lock-count">0</strong>
+          <span>near locks</span>
+        </div>
+        <div>
+          <strong id="max-points">0</strong>
+          <span>max points</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="Group controls">
+        <div class="group-tabs" id="group-tabs"></div>
+        <label class="search-box">
+          <span>Search</span>
+          <input id="search-input" type="search" autocomplete="off" placeholder="Name or team" />
+        </label>
+      </section>
+
+      <section class="participant-section" aria-labelledby="participants-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Every Ballot</p>
+            <h2 id="participants-title">Participant Picks</h2>
+          </div>
+          <p id="participant-note"></p>
+        </div>
+
+        <div class="participant-layout">
+          <aside class="participant-rail" id="participant-rail" aria-label="Participants"></aside>
+          <section class="participant-detail" id="participant-detail" aria-live="polite"></section>
+        </div>
+      </section>
+
+      <section class="matrix-section" aria-labelledby="matrix-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">All Picks</p>
+            <h2 id="matrix-title">Pick Matrix</h2>
+          </div>
+          <p id="matrix-note"></p>
+        </div>
+        <div class="table-wrap">
+          <table class="pick-matrix" id="pick-matrix"></table>
+        </div>
+      </section>
+
+      <section class="consensus-section" aria-labelledby="consensus-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Crowd Read</p>
+            <h2 id="consensus-title">Consensus Snapshot</h2>
+          </div>
+        </div>
+        <div class="spotlight" id="spotlight" aria-live="polite"></div>
+      </section>
+
+      <section class="group-gallery" aria-labelledby="gallery-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Group View</p>
+            <h2 id="gallery-title">Consensus Cards</h2>
+          </div>
+        </div>
+        <div class="cards-grid" id="cards-grid"></div>
+      </section>
+
+      <section class="leaderboard-section" aria-labelledby="leaderboard-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Scoring</p>
+            <h2 id="leaderboard-title">Leaderboard</h2>
+          </div>
+          <p id="leaderboard-note"></p>
+        </div>
+        <div class="table-wrap leaderboard-wrap">
+          <table class="leaderboard" id="leaderboard"></table>
+        </div>
+      </section>
+    </main>
+
+    <script src="predictions-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
