@@ -1991,5 +1991,11 @@ window.WORLD_CUP_PICKS = {
       "second": "ENG"
     }
   ],
-  "actualResults": []
+  "actualResults": [
+    {
+      "group": "A",
+      "first": "MEX",
+      "second": "KOR"
+    }
+  ]
 };
