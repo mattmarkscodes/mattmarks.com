@@ -117,6 +117,20 @@ def actual_results() -> list[dict[str, str]]:
     ]
 
 
+def standings() -> list[dict[str, object]]:
+    raw = pd.read_excel(WORKBOOK, sheet_name="Actual Results - Standings", header=1)
+    rows = raw.dropna(subset=["Pos", "Name", "Points"]).copy()
+
+    return [
+        {
+            "rank": int(row.Pos),
+            "person": str(row.Name),
+            "points": int(row.Points),
+        }
+        for row in rows.itertuples(index=False)
+    ]
+
+
 def main() -> None:
     people, records = predictions()
     data = {
@@ -131,6 +145,7 @@ def main() -> None:
         "groups": group_teams(),
         "predictions": records,
         "actualResults": actual_results(),
+        "standings": standings(),
     }
     payload = json.dumps(data, indent=2, sort_keys=False)
     OUTPUT.write_text(f"window.WORLD_CUP_PICKS = {payload};\n", encoding="utf-8")

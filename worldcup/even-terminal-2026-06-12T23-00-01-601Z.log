@@ -1,0 +1,28 @@
+[2026-06-12 18:00:40] [codex] app-server starting on ws://127.0.0.1:8765
+[2026-06-12 18:00:40] [codex-app-server] codex app-server (WebSockets)
+  listening on: ws://127.0.0.1:8765
+  readyz: http://127.0.0.1:8765/readyz
+  healthz: http://127.0.0.1:8765/healthz
+  note: binds localhost only (use SSH port-forwarding for remote access)
+[2026-06-12 18:00:40] [codex-app-server] notification remoteControl/status/changed {"status":"disabled","serverName":"thematrix.local","installationId":"c7c14f14-8e99-420c-a767-214cafd483dd","environmentId":null}
+[2026-06-12 18:00:40] [codex-provider] notification missing threadId: method=remoteControl/status/changed
+[2026-06-12 18:00:40] [10.249.1.41] 200 GET /api/sessions?provider=codex 281.4ms
+[2026-06-12 18:00:46] [10.249.1.41] 200 GET /api/sessions?provider=codex 16.9ms
+[2026-06-12 18:00:57] [10.249.1.41] 200 GET /api/sessions?provider=codex 13.5ms
+[2026-06-12 18:01:06] [10.249.1.41] 200 GET /api/sessions?provider=codex 13.7ms
+[2026-06-12 18:01:17] [10.249.1.41] 200 GET /api/sessions?provider=codex 16.6ms
+[2026-06-12 18:01:27] [10.249.1.41] 200 GET /api/sessions?provider=codex 14.9ms
+[2026-06-12 18:01:37] [10.249.1.41] 200 GET /api/sessions?provider=codex 15.0ms
+[2026-06-12 18:01:44] [sse] Client connected session=019e3249-744b-77a3-a3a7-049f05251f69 (session clients: 1, total: 1)
+[2026-06-12 18:01:44] [codex-history] sessionId=019e3249-744b-77a3-a3a7-049f05251f69 totalMs=28 pages=1 scannedTurns=1 scannedItems=25 extracted=10 returned=10
+[2026-06-12 18:01:44] [10.249.1.41] 200 GET /api/sessions/019e3249-744b-77a3-a3a7-049f05251f69/history?limit=10&provider=codex 30.6ms
+[2026-06-12 18:01:54] [10.249.1.41] 200 GET /api/sessions?provider=codex 14.9ms
+[2026-06-12 18:02:04] [10.249.1.41] 200 GET /api/sessions?provider=codex 16.8ms
+[2026-06-12 18:02:14] [10.249.1.41] 200 GET /api/sessions?provider=codex 15.3ms
+[2026-06-12 18:02:24] [10.249.1.41] 200 GET /api/sessions?provider=codex 16.4ms
+[2026-06-12 18:02:33] [sse] Client connected session=019ebe0b-d211-7b03-9fa6-1ab9122a1615 (session clients: 1, total: 2)
+[2026-06-12 18:02:33] [codex-history] sessionId=019ebe0b-d211-7b03-9fa6-1ab9122a1615 totalMs=7 pages=1 scannedTurns=2 scannedItems=4 extracted=4 returned=4
+[2026-06-12 18:02:33] [10.249.1.41] 200 GET /api/sessions/019ebe0b-d211-7b03-9fa6-1ab9122a1615/history?limit=10&provider=codex 9.0ms
+[2026-06-12 18:02:43] [10.249.1.41] 200 GET /api/sessions?provider=codex 14.8ms
+[2026-06-12 18:02:48] [sse] Client disconnected (total: 1)
+[2026-06-12 18:02:48] [sse] Client disconnected (total: 0)
