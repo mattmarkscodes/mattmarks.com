@@ -2,7 +2,6 @@ const data = window.WORLD_CUP_PICKS;
 
 const state = {
   group: "A",
-  query: "",
 };
 
 const teamByCode = new Map();
@@ -19,7 +18,7 @@ const resultsGrid = document.querySelector("#results-grid");
 const tabs = document.querySelector("#group-tabs");
 const matrix = document.querySelector("#pick-matrix");
 const leaderboard = document.querySelector("#leaderboard");
-const searchInput = document.querySelector("#search-input");
+const consensusGrid = document.querySelector("#simple-consensus-grid");
 
 document.querySelector("#group-count").textContent = data.actualResults.length;
 document.querySelector("#person-count").textContent = data.people.length;
@@ -28,16 +27,12 @@ document.querySelector("#max-points").textContent = data.scoring.maxTotal;
 
 renderAll();
 
-searchInput.addEventListener("input", (event) => {
-  state.query = event.target.value.trim().toLowerCase();
-  renderMatrix();
-});
-
 function renderAll() {
   renderResults();
   renderTabs();
   renderMatrix();
   renderLeaderboard();
+  renderConsensus();
 }
 
 function renderResults() {
@@ -102,9 +97,6 @@ function renderMatrix() {
   const groupHeaders = data.groups
     .map((group) => `<th class="${group.id === state.group ? "is-selected" : ""}">${group.id}</th>`)
     .join("");
-  const filtered = data.people.filter((person) => personMatches(person));
-  document.querySelector("#matrix-note").textContent = `${filtered.length} of ${data.people.length} participants shown`;
-
   matrix.innerHTML = `
     <thead>
       <tr>
@@ -113,7 +105,7 @@ function renderMatrix() {
       </tr>
     </thead>
     <tbody>
-      ${filtered
+      ${data.people
         .map(
           (person) => `
             <tr>
@@ -122,11 +114,12 @@ function renderMatrix() {
                 .map((group) => {
                   const pick = picksByPerson.get(person).get(group.id);
                   const score = scorePick(pick);
+                  const actual = actualForGroup(group.id);
                   return `
                     <td class="${group.id === state.group ? "is-selected" : ""}">
                       <button class="pick-cell" type="button" data-group="${group.id}" title="${person}: ${pick.first}, ${pick.second}">
-                        ${miniTeam(pick.first, "1")}
-                        ${miniTeam(pick.second, "2")}
+                        ${miniTeam(pick.first, "1", pickStatus(pick.first, "first", actual))}
+                        ${miniTeam(pick.second, "2", pickStatus(pick.second, "second", actual))}
                         ${scoreBadge(score)}
                       </button>
                     </td>
@@ -159,6 +152,8 @@ function renderLeaderboard() {
         })
         .sort((a, b) => b.points - a.points || a.person.localeCompare(b.person))
         .map((row, index) => ({ ...row, rank: index + 1 }));
+  const ranked = applyTieRanks(official);
+  const differentiators = topThreeDifferentiators(ranked, scoreByPerson);
 
   document.querySelector("#leaderboard-note").textContent =
     "2 points per correct advancing team, plus 1 point per exact position";
@@ -173,27 +168,194 @@ function renderLeaderboard() {
         <th>Bonus</th>
         <th>Correct Teams</th>
         <th>Exact Spots</th>
+        <th>Why They're Leading</th>
       </tr>
     </thead>
     <tbody>
-      ${official
+      ${ranked
         .map((standing) => {
           const score = scoreByPerson.get(standing.person);
           return `
-            <tr>
-              <td>${standing.rank}</td>
+            <tr class="${standing.competitionRank <= 3 ? "is-top-three" : ""}">
+              <td>${standing.displayRank}</td>
               <th>${standing.person}</th>
               <td><strong>${standing.points}</strong></td>
               <td>${score.advancePoints}</td>
               <td>${score.bonusPoints}</td>
               <td>${score.correctTeams}</td>
               <td>${score.exactPositions}</td>
+              <td class="leader-reason">${differentiators.get(standing.person) || ""}</td>
             </tr>
           `;
         })
         .join("")}
     </tbody>
   `;
+}
+
+function renderConsensus() {
+  consensusGrid.innerHTML = data.groups
+    .map((group) => {
+      const stats = consensusForGroup(group.id);
+      const teams = [...group.teams].sort(
+        (a, b) =>
+          (stats.advance[b.code] || 0) - (stats.advance[a.code] || 0) ||
+          (stats.first[b.code] || 0) - (stats.first[a.code] || 0),
+      );
+      return `
+        <article class="simple-consensus-card">
+          <header>Group ${group.id}</header>
+          <div class="consensus-bars">
+            ${teams
+              .map(
+                (item) => `
+                  <div class="consensus-team-row">
+                    <div class="consensus-team-label">
+                      <img src="${item.flag}" alt="${item.name} flag" />
+                      <strong>${item.code}</strong>
+                    </div>
+                    ${consensusBar("1st", stats.first[item.code] || 0, "first")}
+                    ${consensusBar("2nd", stats.second[item.code] || 0, "second")}
+                  </div>
+                `,
+              )
+              .join("")}
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+function consensusForGroup(groupId) {
+  const stats = { first: {}, second: {}, advance: {} };
+  data.predictions
+    .filter((pick) => pick.group === groupId)
+    .forEach((pick) => {
+      stats.first[pick.first] = (stats.first[pick.first] || 0) + 1;
+      stats.second[pick.second] = (stats.second[pick.second] || 0) + 1;
+      stats.advance[pick.first] = (stats.advance[pick.first] || 0) + 1;
+      stats.advance[pick.second] = (stats.advance[pick.second] || 0) + 1;
+    });
+
+  return stats;
+}
+
+function consensusBar(label, count, type) {
+  return `
+    <div class="consensus-bar-row ${type}">
+      <span>${label}</span>
+      <div><i style="width: ${(count / data.people.length) * 100}%"></i></div>
+      <b>${count}</b>
+    </div>
+  `;
+}
+
+function applyTieRanks(standings) {
+  const scoreCounts = standings.reduce((counts, standing) => {
+    counts.set(standing.points, (counts.get(standing.points) || 0) + 1);
+    return counts;
+  }, new Map());
+  const rankByScore = new Map();
+  standings.forEach((standing, index) => {
+    if (!rankByScore.has(standing.points)) rankByScore.set(standing.points, index + 1);
+  });
+
+  return standings.map((standing) => {
+    const competitionRank = rankByScore.get(standing.points);
+    const tied = scoreCounts.get(standing.points) > 1;
+    return {
+      ...standing,
+      competitionRank,
+      displayRank: tied ? `T-${competitionRank}` : `${competitionRank}`,
+    };
+  });
+}
+
+function topThreeDifferentiators(official, scoreByPerson) {
+  const leaders = official.filter((standing) => standing.competitionRank <= 3);
+  const topPoints = leaders[0]?.points ?? 0;
+  const tiedLeaders = leaders.filter((standing) => standing.points === topPoints).length;
+  const fieldGroupAverages = new Map(
+    data.groups.map((group) => [
+      group.id,
+      data.people.reduce(
+        (total, person) => total + scorePick(picksByPerson.get(person).get(group.id)).total,
+        0,
+      ) / data.people.length,
+    ]),
+  );
+  const result = new Map();
+
+  leaders.forEach((standing) => {
+    const person = standing.person;
+    const score = scoreByPerson.get(person);
+    const otherLeaders = leaders.filter((row) => row.person !== person);
+    const phrases = [];
+
+    const maxAdvance = Math.max(...leaders.map((row) => scoreByPerson.get(row.person).advancePoints));
+    const maxBonus = Math.max(...leaders.map((row) => scoreByPerson.get(row.person).bonusPoints));
+    const advanceLeaders = leaders.filter(
+      (row) => scoreByPerson.get(row.person).advancePoints === maxAdvance,
+    );
+    const bonusLeaders = leaders.filter(
+      (row) => scoreByPerson.get(row.person).bonusPoints === maxBonus,
+    );
+
+    if (score.advancePoints === maxAdvance && advanceLeaders.length === 1) {
+      phrases.push(`${score.advancePoints} advancing points, most in the top three`);
+    } else if (score.bonusPoints === maxBonus && bonusLeaders.length === 1) {
+      phrases.push(`${score.bonusPoints} position bonuses, most in the top three`);
+    }
+
+    const uniqueGroupEdges = data.groups
+      .map((group) => {
+        const points = scorePick(picksByPerson.get(person).get(group.id)).total;
+        const otherBest = Math.max(
+          ...otherLeaders.map((row) => scorePick(picksByPerson.get(row.person).get(group.id)).total),
+        );
+        return { group: group.id, points, edge: points - otherBest };
+      })
+      .filter((item) => item.points > 0 && item.edge > 0)
+      .sort((a, b) => b.edge - a.edge || b.points - a.points);
+
+    if (!phrases.length && uniqueGroupEdges.length) {
+      const edge = uniqueGroupEdges[0];
+      phrases.push(
+        edge.edge === edge.points
+          ? `Only top-three scorer in Group ${edge.group}: ${edge.points} points`
+          : `Best top-three score in Group ${edge.group}: ${edge.points} points`,
+      );
+    }
+
+    const strongestFieldGain = data.groups
+      .map((group) => {
+        const points = scorePick(picksByPerson.get(person).get(group.id)).total;
+        return {
+          group: group.id,
+          points,
+          gain: points - fieldGroupAverages.get(group.id),
+        };
+      })
+      .filter((item) => item.points > 0)
+      .sort((a, b) => b.gain - a.gain || b.points - a.points)[0];
+
+    if (strongestFieldGain) {
+      phrases.push(
+        `Group ${strongestFieldGain.group}: ${strongestFieldGain.points} points, +${strongestFieldGain.gain.toFixed(1)} vs field average`,
+      );
+    }
+
+    const standingContext =
+      standing.points === topPoints && tiedLeaders > 1
+        ? `Tied for the lead at ${standing.points}`
+        : standing.points === topPoints
+          ? `Leads with ${standing.points}`
+          : `${topPoints - standing.points} point${topPoints - standing.points === 1 ? "" : "s"} back`;
+    result.set(person, [standingContext, ...phrases.slice(0, 2)].join(". "));
+  });
+
+  return result;
 }
 
 function scorePerson(person) {
@@ -238,6 +400,13 @@ function scorePick(pick) {
   return score;
 }
 
+function pickStatus(code, position, actual) {
+  if (!actual?.first || !actual?.second) return "pending";
+  if (code === actual[position]) return "exact";
+  if (code === actual.first || code === actual.second) return "advancing";
+  return "wrong";
+}
+
 function exactPickCount(groupId, first, second) {
   return data.predictions.filter(
     (pick) => pick.group === groupId && pick.first === first && pick.second === second,
@@ -246,19 +415,6 @@ function exactPickCount(groupId, first, second) {
 
 function actualForGroup(groupId) {
   return data.actualResults.find((result) => result.group === groupId);
-}
-
-function personMatches(person) {
-  if (!state.query) return true;
-  const personText = person.toLowerCase();
-  const picksText = data.groups
-    .map((group) => {
-      const pick = picksByPerson.get(person).get(group.id);
-      return `${pick.first} ${pick.second} ${teamName(pick.first)} ${teamName(pick.second)}`;
-    })
-    .join(" ")
-    .toLowerCase();
-  return personText.includes(state.query) || picksText.includes(state.query);
 }
 
 function standingTeam(item, rank) {
@@ -286,10 +442,10 @@ function teamName(code) {
   return team(code).name;
 }
 
-function miniTeam(code, rank) {
+function miniTeam(code, rank, status = "") {
   const item = team(code);
   return `
-    <span class="mini-team">
+    <span class="mini-team ${status ? `is-${status}` : ""}">
       <span>${rank}</span>
       <img src="${item.flag}" alt="${item.name} flag" />
       <b>${code}</b>

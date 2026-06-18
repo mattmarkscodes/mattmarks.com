@@ -39,7 +39,6 @@
             <p class="eyebrow">After The Opening Matches</p>
             <h2 id="results-title">Current Group Standings</h2>
           </div>
-          <p>Current first and second place from the workbook</p>
         </div>
         <div class="results-grid" id="results-grid"></div>
       </section>
@@ -50,14 +49,14 @@
             <p class="eyebrow">Every Ballot</p>
             <h2 id="matrix-title">Pick Matrix</h2>
           </div>
-          <p id="matrix-note"></p>
         </div>
         <div class="matrix-controls" aria-label="Pick Matrix controls">
           <div class="group-tabs" id="group-tabs"></div>
-          <label class="search-box">
-            <span>Search</span>
-            <input id="search-input" type="search" autocomplete="off" placeholder="Name or team" />
-          </label>
+          <div class="pick-legend" aria-label="Pick status legend">
+            <span class="is-exact">Correct position</span>
+            <span class="is-advancing">Correct team, wrong position</span>
+            <span class="is-wrong">Outside top two</span>
+          </div>
         </div>
         <div class="table-wrap">
           <table class="pick-matrix" id="pick-matrix"></table>
@@ -75,6 +74,16 @@
         <div class="table-wrap leaderboard-wrap">
           <table class="leaderboard" id="leaderboard"></table>
         </div>
+      </section>
+
+      <section class="simple-consensus-section" aria-labelledby="consensus-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Pool Consensus</p>
+            <h2 id="consensus-title">Most Popular Picks</h2>
+          </div>
+        </div>
+        <div class="simple-consensus-grid" id="simple-consensus-grid"></div>
       </section>
     </main>
 

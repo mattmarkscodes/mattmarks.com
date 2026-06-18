@@ -1996,6 +1996,178 @@ window.WORLD_CUP_PICKS = {
       "group": "A",
       "first": "MEX",
       "second": "KOR"
+    },
+    {
+      "group": "B",
+      "first": "SUI",
+      "second": "CAN"
+    },
+    {
+      "group": "C",
+      "first": "SCO",
+      "second": "MAR"
+    },
+    {
+      "group": "D",
+      "first": "USA",
+      "second": "AUS"
+    },
+    {
+      "group": "E",
+      "first": "GER",
+      "second": "CIV"
+    },
+    {
+      "group": "F",
+      "first": "SWE",
+      "second": "JPN"
+    },
+    {
+      "group": "G",
+      "first": "NZL",
+      "second": "IRN"
+    },
+    {
+      "group": "H",
+      "first": "URU",
+      "second": "KSA"
+    },
+    {
+      "group": "I",
+      "first": "NOR",
+      "second": "FRA"
+    },
+    {
+      "group": "J",
+      "first": "ARG",
+      "second": "AUT"
+    },
+    {
+      "group": "K",
+      "first": "COL",
+      "second": "COD"
+    },
+    {
+      "group": "L",
+      "first": "ENG",
+      "second": "GHA"
+    }
+  ],
+  "standings": [
+    {
+      "rank": 1,
+      "person": "Jess",
+      "points": 43
+    },
+    {
+      "rank": 2,
+      "person": "Britton",
+      "points": 42
+    },
+    {
+      "rank": 3,
+      "person": "Tomiwa",
+      "points": 42
+    },
+    {
+      "rank": 4,
+      "person": "Cathy",
+      "points": 42
+    },
+    {
+      "rank": 5,
+      "person": "Robert",
+      "points": 41
+    },
+    {
+      "rank": 6,
+      "person": "Dawn",
+      "points": 40
+    },
+    {
+      "rank": 7,
+      "person": "Cassie",
+      "points": 40
+    },
+    {
+      "rank": 8,
+      "person": "Mohamed",
+      "points": 40
+    },
+    {
+      "rank": 9,
+      "person": "Matt M",
+      "points": 40
+    },
+    {
+      "rank": 10,
+      "person": "Morgane",
+      "points": 39
+    },
+    {
+      "rank": 11,
+      "person": "Derek",
+      "points": 39
+    },
+    {
+      "rank": 12,
+      "person": "Sergio",
+      "points": 39
+    },
+    {
+      "rank": 13,
+      "person": "Jeremy",
+      "points": 39
+    },
+    {
+      "rank": 14,
+      "person": "Wojciech",
+      "points": 38
+    },
+    {
+      "rank": 15,
+      "person": "Changsu",
+      "points": 38
+    },
+    {
+      "rank": 16,
+      "person": "Eileen",
+      "points": 37
+    },
+    {
+      "rank": 17,
+      "person": "Vishakha",
+      "points": 37
+    },
+    {
+      "rank": 18,
+      "person": "Ryan",
+      "points": 37
+    },
+    {
+      "rank": 19,
+      "person": "Zarai",
+      "points": 36
+    },
+    {
+      "rank": 20,
+      "person": "Mac",
+      "points": 35
+    },
+    {
+      "rank": 21,
+      "person": "Seeyon",
+      "points": 33
+    },
+    {
+      "rank": 22,
+      "person": "Kate",
+      "points": 33
+    },
+    {
+      "rank": 23,
+      "person": "Tanya",
+      "points": 33
     }
   ]
 };
