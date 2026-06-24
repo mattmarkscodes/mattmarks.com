@@ -2004,7 +2004,7 @@ window.WORLD_CUP_PICKS = {
     },
     {
       "group": "C",
-      "first": "SCO",
+      "first": "BRA",
       "second": "MAR"
     },
     {
@@ -2019,23 +2019,23 @@ window.WORLD_CUP_PICKS = {
     },
     {
       "group": "F",
-      "first": "SWE",
+      "first": "NED",
       "second": "JPN"
     },
     {
       "group": "G",
-      "first": "NZL",
+      "first": "EGY",
       "second": "IRN"
     },
     {
       "group": "H",
       "first": "URU",
-      "second": "KSA"
+      "second": "ESP"
     },
     {
       "group": "I",
-      "first": "NOR",
-      "second": "FRA"
+      "first": "FRA",
+      "second": "NOR"
     },
     {
       "group": "J",
@@ -2045,7 +2045,7 @@ window.WORLD_CUP_PICKS = {
     {
       "group": "K",
       "first": "COL",
-      "second": "COD"
+      "second": "POR"
     },
     {
       "group": "L",
@@ -2056,118 +2056,118 @@ window.WORLD_CUP_PICKS = {
   "standings": [
     {
       "rank": 1,
-      "person": "Jess",
-      "points": 43
+      "person": "Cathy",
+      "points": 57
     },
     {
       "rank": 2,
       "person": "Britton",
-      "points": 42
+      "points": 55
     },
     {
       "rank": 3,
-      "person": "Tomiwa",
-      "points": 42
+      "person": "Cassie",
+      "points": 54
     },
     {
       "rank": 4,
-      "person": "Cathy",
-      "points": 42
+      "person": "Mohamed",
+      "points": 54
     },
     {
       "rank": 5,
-      "person": "Robert",
-      "points": 41
+      "person": "Sergio",
+      "points": 53
     },
     {
       "rank": 6,
-      "person": "Dawn",
-      "points": 40
+      "person": "Tomiwa",
+      "points": 52
     },
     {
       "rank": 7,
-      "person": "Cassie",
-      "points": 40
+      "person": "Morgane",
+      "points": 52
     },
     {
       "rank": 8,
-      "person": "Mohamed",
-      "points": 40
+      "person": "Derek",
+      "points": 52
     },
     {
       "rank": 9,
-      "person": "Matt M",
-      "points": 40
+      "person": "Jeremy",
+      "points": 52
     },
     {
       "rank": 10,
-      "person": "Morgane",
-      "points": 39
+      "person": "Changsu",
+      "points": 51
     },
     {
       "rank": 11,
-      "person": "Derek",
-      "points": 39
+      "person": "Vishakha",
+      "points": 50
     },
     {
       "rank": 12,
-      "person": "Sergio",
-      "points": 39
+      "person": "Robert",
+      "points": 50
     },
     {
       "rank": 13,
-      "person": "Jeremy",
-      "points": 39
+      "person": "Dawn",
+      "points": 50
     },
     {
       "rank": 14,
-      "person": "Wojciech",
-      "points": 38
+      "person": "Eileen",
+      "points": 50
     },
     {
       "rank": 15,
-      "person": "Changsu",
-      "points": 38
+      "person": "Zarai",
+      "points": 50
     },
     {
       "rank": 16,
-      "person": "Eileen",
-      "points": 37
+      "person": "Ryan",
+      "points": 50
     },
     {
       "rank": 17,
-      "person": "Vishakha",
-      "points": 37
+      "person": "Jess",
+      "points": 48
     },
     {
       "rank": 18,
-      "person": "Ryan",
-      "points": 37
+      "person": "Matt M",
+      "points": 47
     },
     {
       "rank": 19,
-      "person": "Zarai",
-      "points": 36
+      "person": "Wojciech",
+      "points": 47
     },
     {
       "rank": 20,
       "person": "Mac",
-      "points": 35
+      "points": 46
     },
     {
       "rank": 21,
-      "person": "Seeyon",
-      "points": 33
+      "person": "Tanya",
+      "points": 45
     },
     {
       "rank": 22,
       "person": "Kate",
-      "points": 33
+      "points": 43
     },
     {
       "rank": 23,
-      "person": "Tanya",
-      "points": 33
+      "person": "Seeyon",
+      "points": 41
     }
   ]
 };
