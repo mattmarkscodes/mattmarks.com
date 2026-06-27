@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>World Cup Bracket Tracker</title>
+    <link rel="stylesheet" href="bracket.css" />
+  </head>
+  <body>
+    <header class="bracket-header">
+      <div>
+        <h1>2026 FIFA World Cup Bracket Challenge</h1>
+        <p>Round of 32 through the final</p>
+      </div>
+      <div class="summary-strip" aria-label="Bracket summary">
+        <div>
+          <strong id="matches-complete">0</strong>
+          <span>matches scored</span>
+        </div>
+        <div>
+          <strong id="bracket-people">0</strong>
+          <span>brackets</span>
+        </div>
+        <div>
+          <strong id="bracket-lead">0</strong>
+          <span>leading score</span>
+        </div>
+        <div>
+          <strong id="bracket-max">0</strong>
+          <span>max points</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="source-section" aria-labelledby="source-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Source of Truth</p>
+            <h2 id="source-title">Official Bracket</h2>
+          </div>
+          <p id="source-note"></p>
+        </div>
+        <div class="bracket-scroll" id="source-bracket"></div>
+      </section>
+
+      <section class="participant-section" aria-labelledby="participant-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Every Submitted Bracket</p>
+            <h2 id="participant-title">Participant View</h2>
+          </div>
+          <label class="participant-picker">
+            <span>Bracket</span>
+            <select id="person-select"></select>
+          </label>
+        </div>
+        <div class="participant-summary" id="participant-summary"></div>
+        <div class="bracket-scroll" id="participant-bracket"></div>
+      </section>
+
+      <section class="leaderboard-section" aria-labelledby="leaderboard-title">
+        <div class="leaderboard-card">
+          <h2 id="leaderboard-title">Bracket Leaderboard</h2>
+          <ol class="leaderboard-list" id="leaderboard"></ol>
+        </div>
+      </section>
+
+      <section class="insights-section" aria-labelledby="insights-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Side Quest</p>
+            <h2 id="insights-title">Dark Horse</h2>
+          </div>
+        </div>
+        <div class="insights-grid">
+          <div class="table-wrap">
+            <table class="dark-horse" id="dark-horse"></table>
+          </div>
+          <article class="consensus-panel">
+            <header>
+              <p class="eyebrow">Pool Consensus</p>
+              <h3>Champion Picks</h3>
+            </header>
+            <div id="champion-consensus"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="bracket-data.js?v=20260627"></script>
+    <script src="bracket.js?v=20260627"></script>
+  </body>
+</html>

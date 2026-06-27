@@ -4,6 +4,8 @@ const state = {
   group: "A",
 };
 
+const finalGroups = new Set(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
+
 const teamByCode = new Map();
 data.groups.forEach((group) => {
   group.teams.forEach((team) => teamByCode.set(team.code, { ...team, group: group.id }));
@@ -48,7 +50,7 @@ function renderResults() {
           <button type="button" data-group="${group.id}" aria-label="Highlight Group ${group.id}">
             <header>
               <span>Group ${group.id}</span>
-              <em>${actual ? "Live" : "Pending"}</em>
+              <em>${resultStatus(group.id, actual)}</em>
             </header>
             ${
               actual
@@ -411,6 +413,11 @@ function exactPickCount(groupId, first, second) {
   return data.predictions.filter(
     (pick) => pick.group === groupId && pick.first === first && pick.second === second,
   ).length;
+}
+
+function resultStatus(groupId, actual) {
+  if (!actual) return "Pending";
+  return finalGroups.has(groupId) ? "Final" : "Live";
 }
 
 function actualForGroup(groupId) {
