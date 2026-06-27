@@ -4,7 +4,7 @@ const state = {
   group: "A",
 };
 
-const finalGroups = new Set(["A", "B", "C", "D", "E", "F", "G", "H", "I"]);
+const finalGroups = new Set(["A", "B", "C", "D", "E", "F", "G", "H", "I", "L"]);
 
 const teamByCode = new Map();
 data.groups.forEach((group) => {

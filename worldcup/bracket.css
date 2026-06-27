@@ -200,95 +200,221 @@ main {
   min-width: 0;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0 0 6px;
+  padding: 4px 0 10px;
+  scrollbar-color: #565656 #191919;
 }
 
-.legacy-bracket {
-  width: min-content;
-  min-width: 900px;
+.bracket-scroll::-webkit-scrollbar {
+  height: 12px;
+}
+
+.bracket-scroll::-webkit-scrollbar-track {
+  background: #191919;
+  border-radius: 999px;
+}
+
+.bracket-scroll::-webkit-scrollbar-thumb {
+  background: #565656;
+  border-radius: 999px;
+}
+
+.bracket-board-ltr {
+  --r16-offset: 38px;
+  --r16-gap: 54px;
+  --qf-offset: 115px;
+  --qf-gap: 165px;
+  --sf-offset: 275px;
+  --sf-gap: 365px;
+  --final-offset: 595px;
+  --champion-offset: 595px;
+  display: grid;
+  width: max-content;
+  min-width: 1180px;
+  grid-template-columns: 184px 174px 164px 154px 154px 170px;
+  gap: 16px;
+  align-items: start;
   margin: 0 auto;
-  padding: 10px 0 0;
+  padding: 8px 10px 12px;
 }
 
-.legacy-round-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  margin: 18px auto 8px;
-  color: #d8d8d8;
-  font-size: 0.75rem;
+.round-column-ltr {
+  min-width: 0;
+}
+
+.round-heading-ltr {
+  display: grid;
+  min-height: 46px;
+  align-content: end;
+  gap: 3px;
+  margin-bottom: 8px;
+  text-align: center;
   text-transform: uppercase;
 }
 
-.legacy-round-label span {
+.round-heading-ltr span {
   color: var(--gold);
+  font-size: 0.68rem;
   font-weight: 900;
 }
 
-.legacy-round-label strong {
-  font-weight: 800;
-}
-
-.legacy-grid {
-  display: grid;
-  gap: 10px;
-  width: 900px;
-  margin: 0 auto;
-}
-
-.cols-8 {
-  grid-template-columns: repeat(8, minmax(0, 1fr));
-}
-
-.cols-4 {
-  width: 780px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.cols-2 {
-  width: 560px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.cols-1 {
-  width: 420px;
-  grid-template-columns: 1fr;
-}
-
-.name-grid {
-  margin-bottom: 6px;
-}
-
-.team-grid + .name-grid {
-  margin-top: 6px;
-  margin-bottom: 0;
-}
-
-.name-pair {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 4px;
-}
-
-.name-pair span {
+.round-heading-ltr strong {
   overflow: hidden;
-  color: #cccccc;
-  font-size: 0.68rem;
-  font-weight: 700;
-  text-align: center;
+  color: #e1e1e1;
+  font-size: 0.76rem;
+  font-weight: 850;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.team-pair {
+.match-list-ltr {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.round-column-ltr[data-round="R16"] .match-list-ltr {
+  gap: var(--r16-gap);
+  padding-top: var(--r16-offset);
+}
+
+.round-column-ltr[data-round="QF"] .match-list-ltr {
+  gap: var(--qf-gap);
+  padding-top: var(--qf-offset);
+}
+
+.round-column-ltr[data-round="SF"] .match-list-ltr {
+  gap: var(--sf-gap);
+  padding-top: var(--sf-offset);
+}
+
+.round-column-ltr[data-round="FINAL"] .match-list-ltr {
+  padding-top: var(--final-offset);
+}
+
+.round-column-ltr[data-round="CHAMPION"] .match-list-ltr {
+  padding-top: var(--champion-offset);
+}
+
+.match-card-ltr {
+  position: relative;
+  display: grid;
+  min-height: 94px;
+  gap: 6px;
+  border-radius: 8px;
+  padding: 8px;
+  background: linear-gradient(to bottom, #242833, #15171d);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 8px 20px rgba(0, 0, 0, 0.22);
+}
+
+.match-card-ltr::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -16px;
+  width: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.champion-column-ltr .match-card-ltr::after {
+  content: none;
+}
+
+.match-meta-ltr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #cfcfcf;
+  font-size: 0.62rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.match-meta-ltr span,
+.match-meta-ltr b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.match-meta-ltr b {
+  color: var(--gold);
+}
+
+.team-slots-ltr {
+  display: grid;
   gap: 4px;
 }
 
-.status-grid + .team-grid {
-  margin-top: 14px;
+.team-slot-ltr {
+  display: grid;
+  grid-template-columns: 34px minmax(34px, 1fr);
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.team-slot-ltr .flag-tile {
+  width: 34px;
+  height: 23px;
+}
+
+.team-slot-ltr > span,
+.participant-pick-ltr strong,
+.champion-tile strong {
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.participant-pick-ltr {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.participant-pick-ltr .flag-tile {
+  width: 58px;
+  height: 38px;
+}
+
+.participant-pick-ltr span {
+  display: block;
+  color: #bdbdbd;
+  font-size: 0.62rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.participant-pick-ltr strong {
+  display: block;
+  margin-top: 2px;
+}
+
+.matchup-caption-ltr {
+  overflow: hidden;
+  color: #bdbdbd;
+  font-size: 0.64rem;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.champion-card {
+  align-content: start;
+}
+
+.champion-tile {
+  display: grid;
+  gap: 8px;
+  text-align: center;
+}
+
+.champion-tile .flag-tile {
+  width: 100%;
 }
 
 .flag-tile {
@@ -336,44 +462,6 @@ main {
     0 0 18px rgba(136, 250, 79, 0.16);
 }
 
-.advancer-grid {
-  margin-top: 28px;
-}
-
-.advancer-grid .flag-tile,
-.single-advancer .flag-tile {
-  aspect-ratio: 3 / 2;
-}
-
-.single-advancer {
-  display: grid;
-  width: 250px;
-  margin: 30px auto 0;
-}
-
-.winner-stage {
-  display: grid;
-  width: min(100%, 360px);
-  gap: 10px;
-  margin: 42px auto;
-  text-align: center;
-}
-
-.winner-stage > span {
-  color: var(--gold);
-  font-size: 0.75rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.winner-stage .flag-tile {
-  aspect-ratio: 3 / 2;
-}
-
-.status-grid {
-  margin-top: 14px;
-}
-
 .time-band {
   display: grid;
   min-height: 36px;
@@ -399,6 +487,7 @@ main {
   color: #000000;
 }
 
+.time-band.is-missing,
 .time-band.is-alive,
 .time-band.is-pick {
   background: #222222;
@@ -641,8 +730,10 @@ tbody tr:last-child td {
     grid-template-columns: 1fr;
   }
 
-  .legacy-bracket {
-    min-width: 900px;
+  .bracket-board-ltr {
+    min-width: 1080px;
+    grid-template-columns: 172px 160px 150px 142px 142px 154px;
+    gap: 12px;
   }
 
   .leaderboard-row mark {
