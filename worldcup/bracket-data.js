@@ -717,157 +717,157 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Morgane",
       "match": "R32-01",
-      "winner": ""
+      "winner": "GER"
     },
     {
       "person": "Morgane",
       "match": "R32-02",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Morgane",
       "match": "R32-03",
-      "winner": ""
+      "winner": "RSA"
     },
     {
       "person": "Morgane",
       "match": "R32-04",
-      "winner": ""
+      "winner": "NED"
     },
     {
       "person": "Morgane",
       "match": "R32-05",
-      "winner": ""
+      "winner": "POR"
     },
     {
       "person": "Morgane",
       "match": "R32-06",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Morgane",
       "match": "R32-07",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Morgane",
       "match": "R32-08",
-      "winner": ""
+      "winner": "SEN"
     },
     {
       "person": "Morgane",
       "match": "R32-09",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Morgane",
       "match": "R32-10",
-      "winner": ""
+      "winner": "CIV"
     },
     {
       "person": "Morgane",
       "match": "R32-11",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Morgane",
       "match": "R32-12",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Morgane",
       "match": "R32-13",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Morgane",
       "match": "R32-14",
-      "winner": ""
+      "winner": "EGY"
     },
     {
       "person": "Morgane",
       "match": "R32-15",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "person": "Morgane",
       "match": "R32-16",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Morgane",
       "match": "R16-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Morgane",
       "match": "R16-02",
-      "winner": ""
+      "winner": "NED"
     },
     {
       "person": "Morgane",
       "match": "R16-03",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Morgane",
       "match": "R16-04",
-      "winner": ""
+      "winner": "SEN"
     },
     {
       "person": "Morgane",
       "match": "R16-05",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Morgane",
       "match": "R16-06",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Morgane",
       "match": "R16-07",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Morgane",
       "match": "R16-08",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "person": "Morgane",
       "match": "QF-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Morgane",
       "match": "QF-02",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Morgane",
       "match": "QF-03",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Morgane",
       "match": "QF-04",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Morgane",
       "match": "SF-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Morgane",
       "match": "SF-02",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Morgane",
       "match": "FINAL-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Eileen",
@@ -1037,7 +1037,7 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Derek",
       "match": "R32-03",
-      "winner": ""
+      "winner": "CAN"
     },
     {
       "person": "Derek",
@@ -1202,7 +1202,7 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Matt M",
       "match": "R32-05",
-      "winner": ""
+      "winner": "CRO"
     },
     {
       "person": "Matt M",
@@ -1217,7 +1217,7 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Matt M",
       "match": "R32-08",
-      "winner": ""
+      "winner": "SEN"
     },
     {
       "person": "Matt M",
@@ -1232,12 +1232,12 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Matt M",
       "match": "R32-11",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Matt M",
       "match": "R32-12",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Matt M",
@@ -1252,12 +1252,12 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Matt M",
       "match": "R32-15",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "person": "Matt M",
       "match": "R32-16",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Matt M",
@@ -1282,12 +1282,12 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Matt M",
       "match": "R16-05",
-      "winner": "NOR"
+      "winner": "BRA"
     },
     {
       "person": "Matt M",
       "match": "R16-06",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Matt M",
@@ -1297,7 +1297,7 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Matt M",
       "match": "R16-08",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Matt M",
@@ -1312,7 +1312,7 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Matt M",
       "match": "QF-03",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Matt M",
@@ -1802,312 +1802,312 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Changsu",
       "match": "R32-01",
-      "winner": ""
+      "winner": "GER"
     },
     {
       "person": "Changsu",
       "match": "R32-02",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Changsu",
       "match": "R32-03",
-      "winner": ""
+      "winner": "CAN"
     },
     {
       "person": "Changsu",
       "match": "R32-04",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "person": "Changsu",
       "match": "R32-05",
-      "winner": ""
+      "winner": "POR"
     },
     {
       "person": "Changsu",
       "match": "R32-06",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Changsu",
       "match": "R32-07",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Changsu",
       "match": "R32-08",
-      "winner": ""
+      "winner": "SEN"
     },
     {
       "person": "Changsu",
       "match": "R32-09",
-      "winner": ""
+      "winner": "JPN"
     },
     {
       "person": "Changsu",
       "match": "R32-10",
-      "winner": ""
+      "winner": "NOR"
     },
     {
       "person": "Changsu",
       "match": "R32-11",
-      "winner": ""
+      "winner": "ECU"
     },
     {
       "person": "Changsu",
       "match": "R32-12",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Changsu",
       "match": "R32-13",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Changsu",
       "match": "R32-14",
-      "winner": ""
+      "winner": "EGY"
     },
     {
       "person": "Changsu",
       "match": "R32-15",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "person": "Changsu",
       "match": "R32-16",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Changsu",
       "match": "R16-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Changsu",
       "match": "R16-02",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "person": "Changsu",
       "match": "R16-03",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Changsu",
       "match": "R16-04",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Changsu",
       "match": "R16-05",
-      "winner": ""
+      "winner": "JPN"
     },
     {
       "person": "Changsu",
       "match": "R16-06",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Changsu",
       "match": "R16-07",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Changsu",
       "match": "R16-08",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Changsu",
       "match": "QF-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Changsu",
       "match": "QF-02",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Changsu",
       "match": "QF-03",
-      "winner": ""
+      "winner": "JPN"
     },
     {
       "person": "Changsu",
       "match": "QF-04",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Changsu",
       "match": "SF-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Changsu",
       "match": "SF-02",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Changsu",
       "match": "FINAL-01",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Vishakha",
       "match": "R32-01",
-      "winner": ""
+      "winner": "GER"
     },
     {
       "person": "Vishakha",
       "match": "R32-02",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Vishakha",
       "match": "R32-03",
-      "winner": ""
+      "winner": "CAN"
     },
     {
       "person": "Vishakha",
       "match": "R32-04",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "person": "Vishakha",
       "match": "R32-05",
-      "winner": ""
+      "winner": "POR"
     },
     {
       "person": "Vishakha",
       "match": "R32-06",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Vishakha",
       "match": "R32-07",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Vishakha",
       "match": "R32-08",
-      "winner": ""
+      "winner": "BEL"
     },
     {
       "person": "Vishakha",
       "match": "R32-09",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Vishakha",
       "match": "R32-10",
-      "winner": ""
+      "winner": "NOR"
     },
     {
       "person": "Vishakha",
       "match": "R32-11",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Vishakha",
       "match": "R32-12",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Vishakha",
       "match": "R32-13",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Vishakha",
       "match": "R32-14",
-      "winner": ""
+      "winner": "EGY"
     },
     {
       "person": "Vishakha",
       "match": "R32-15",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "person": "Vishakha",
       "match": "R32-16",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Vishakha",
       "match": "R16-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Vishakha",
       "match": "R16-02",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "person": "Vishakha",
       "match": "R16-03",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Vishakha",
       "match": "R16-04",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Vishakha",
       "match": "R16-05",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Vishakha",
       "match": "R16-06",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Vishakha",
       "match": "R16-07",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Vishakha",
       "match": "R16-08",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Vishakha",
       "match": "QF-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Vishakha",
       "match": "QF-02",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Vishakha",
       "match": "QF-03",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Vishakha",
       "match": "QF-04",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Vishakha",
       "match": "SF-01",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Vishakha",
       "match": "SF-02",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Vishakha",
       "match": "FINAL-01",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Robert",
@@ -2122,7 +2122,7 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Robert",
       "match": "R32-03",
-      "winner": ""
+      "winner": "RSA"
     },
     {
       "person": "Robert",
@@ -2422,7 +2422,7 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Tomiwa",
       "match": "R32-01",
-      "winner": ""
+      "winner": "GER"
     },
     {
       "person": "Tomiwa",
@@ -2432,12 +2432,12 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Tomiwa",
       "match": "R32-03",
-      "winner": ""
+      "winner": "RSA"
     },
     {
       "person": "Tomiwa",
       "match": "R32-04",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "person": "Tomiwa",
@@ -2462,7 +2462,7 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Tomiwa",
       "match": "R32-09",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Tomiwa",
@@ -2577,82 +2577,82 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Mohamed",
       "match": "R32-01",
-      "winner": ""
+      "winner": "GER"
     },
     {
       "person": "Mohamed",
       "match": "R32-02",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Mohamed",
       "match": "R32-03",
-      "winner": ""
+      "winner": "RSA"
     },
     {
       "person": "Mohamed",
       "match": "R32-04",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "person": "Mohamed",
       "match": "R32-05",
-      "winner": ""
+      "winner": "POR"
     },
     {
       "person": "Mohamed",
       "match": "R32-06",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Mohamed",
       "match": "R32-07",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Mohamed",
       "match": "R32-08",
-      "winner": ""
+      "winner": "BEL"
     },
     {
       "person": "Mohamed",
       "match": "R32-09",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Mohamed",
       "match": "R32-10",
-      "winner": ""
+      "winner": "NOR"
     },
     {
       "person": "Mohamed",
       "match": "R32-11",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Mohamed",
       "match": "R32-12",
-      "winner": ""
+      "winner": "COD"
     },
     {
       "person": "Mohamed",
       "match": "R32-13",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Mohamed",
       "match": "R32-14",
-      "winner": ""
+      "winner": "EGY"
     },
     {
       "person": "Mohamed",
       "match": "R32-15",
-      "winner": ""
+      "winner": "ALG"
     },
     {
       "person": "Mohamed",
       "match": "R32-16",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Mohamed",
@@ -2732,157 +2732,157 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Sergio",
       "match": "R32-01",
-      "winner": ""
+      "winner": "GER"
     },
     {
       "person": "Sergio",
       "match": "R32-02",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Sergio",
       "match": "R32-03",
-      "winner": ""
+      "winner": "CAN"
     },
     {
       "person": "Sergio",
       "match": "R32-04",
-      "winner": ""
+      "winner": "NED"
     },
     {
       "person": "Sergio",
       "match": "R32-05",
-      "winner": ""
+      "winner": "POR"
     },
     {
       "person": "Sergio",
       "match": "R32-06",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Sergio",
       "match": "R32-07",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Sergio",
       "match": "R32-08",
-      "winner": ""
+      "winner": "SEN"
     },
     {
       "person": "Sergio",
       "match": "R32-09",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Sergio",
       "match": "R32-10",
-      "winner": ""
+      "winner": "NOR"
     },
     {
       "person": "Sergio",
       "match": "R32-11",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Sergio",
       "match": "R32-12",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Sergio",
       "match": "R32-13",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Sergio",
       "match": "R32-14",
-      "winner": ""
+      "winner": "EGY"
     },
     {
       "person": "Sergio",
       "match": "R32-15",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "person": "Sergio",
       "match": "R32-16",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Sergio",
       "match": "R16-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Sergio",
       "match": "R16-02",
-      "winner": ""
+      "winner": "NED"
     },
     {
       "person": "Sergio",
       "match": "R16-03",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Sergio",
       "match": "R16-04",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Sergio",
       "match": "R16-05",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Sergio",
       "match": "R16-06",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Sergio",
       "match": "R16-07",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Sergio",
       "match": "R16-08",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "person": "Sergio",
       "match": "QF-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Sergio",
       "match": "QF-02",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Sergio",
       "match": "QF-03",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Sergio",
       "match": "QF-04",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Sergio",
       "match": "SF-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Sergio",
       "match": "SF-02",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Sergio",
       "match": "FINAL-01",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Zarai",
@@ -2897,7 +2897,7 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Zarai",
       "match": "R32-03",
-      "winner": ""
+      "winner": "CAN"
     },
     {
       "person": "Zarai",
@@ -3042,157 +3042,157 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Wojciech",
       "match": "R32-01",
-      "winner": ""
+      "winner": "GER"
     },
     {
       "person": "Wojciech",
       "match": "R32-02",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Wojciech",
       "match": "R32-03",
-      "winner": ""
+      "winner": "CAN"
     },
     {
       "person": "Wojciech",
       "match": "R32-04",
-      "winner": ""
+      "winner": "NED"
     },
     {
       "person": "Wojciech",
       "match": "R32-05",
-      "winner": ""
+      "winner": "POR"
     },
     {
       "person": "Wojciech",
       "match": "R32-06",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Wojciech",
       "match": "R32-07",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Wojciech",
       "match": "R32-08",
-      "winner": ""
+      "winner": "BEL"
     },
     {
       "person": "Wojciech",
       "match": "R32-09",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Wojciech",
       "match": "R32-10",
-      "winner": ""
+      "winner": "NOR"
     },
     {
       "person": "Wojciech",
       "match": "R32-11",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Wojciech",
       "match": "R32-12",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Wojciech",
       "match": "R32-13",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Wojciech",
       "match": "R32-14",
-      "winner": ""
+      "winner": "AUS"
     },
     {
       "person": "Wojciech",
       "match": "R32-15",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "person": "Wojciech",
       "match": "R32-16",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Wojciech",
       "match": "R16-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Wojciech",
       "match": "R16-02",
-      "winner": ""
+      "winner": "NED"
     },
     {
       "person": "Wojciech",
       "match": "R16-03",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Wojciech",
       "match": "R16-04",
-      "winner": ""
+      "winner": "BEL"
     },
     {
       "person": "Wojciech",
       "match": "R16-05",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Wojciech",
       "match": "R16-06",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Wojciech",
       "match": "R16-07",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Wojciech",
       "match": "R16-08",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Wojciech",
       "match": "QF-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Wojciech",
       "match": "QF-02",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Wojciech",
       "match": "QF-03",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Wojciech",
       "match": "QF-04",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Wojciech",
       "match": "SF-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Wojciech",
       "match": "SF-02",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Wojciech",
       "match": "FINAL-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Cathy",
@@ -3507,312 +3507,312 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Jeremy",
       "match": "R32-01",
-      "winner": ""
+      "winner": "GER"
     },
     {
       "person": "Jeremy",
       "match": "R32-02",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Jeremy",
       "match": "R32-03",
-      "winner": ""
+      "winner": "CAN"
     },
     {
       "person": "Jeremy",
       "match": "R32-04",
-      "winner": ""
+      "winner": "NED"
     },
     {
       "person": "Jeremy",
       "match": "R32-05",
-      "winner": ""
+      "winner": "POR"
     },
     {
       "person": "Jeremy",
       "match": "R32-06",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Jeremy",
       "match": "R32-07",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Jeremy",
       "match": "R32-08",
-      "winner": ""
+      "winner": "BEL"
     },
     {
       "person": "Jeremy",
       "match": "R32-09",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Jeremy",
       "match": "R32-10",
-      "winner": ""
+      "winner": "NOR"
     },
     {
       "person": "Jeremy",
       "match": "R32-11",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Jeremy",
       "match": "R32-12",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Jeremy",
       "match": "R32-13",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Jeremy",
       "match": "R32-14",
-      "winner": ""
+      "winner": "EGY"
     },
     {
       "person": "Jeremy",
       "match": "R32-15",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "person": "Jeremy",
       "match": "R32-16",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Jeremy",
       "match": "R16-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Jeremy",
       "match": "R16-02",
-      "winner": ""
+      "winner": "NED"
     },
     {
       "person": "Jeremy",
       "match": "R16-03",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Jeremy",
       "match": "R16-04",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Jeremy",
       "match": "R16-05",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Jeremy",
       "match": "R16-06",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Jeremy",
       "match": "R16-07",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Jeremy",
       "match": "R16-08",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Jeremy",
       "match": "QF-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Jeremy",
       "match": "QF-02",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Jeremy",
       "match": "QF-03",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Jeremy",
       "match": "QF-04",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Jeremy",
       "match": "SF-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Jeremy",
       "match": "SF-02",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Jeremy",
       "match": "FINAL-01",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Tanya",
       "match": "R32-01",
-      "winner": ""
+      "winner": "GER"
     },
     {
       "person": "Tanya",
       "match": "R32-02",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Tanya",
       "match": "R32-03",
-      "winner": ""
+      "winner": "RSA"
     },
     {
       "person": "Tanya",
       "match": "R32-04",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "person": "Tanya",
       "match": "R32-05",
-      "winner": ""
+      "winner": "POR"
     },
     {
       "person": "Tanya",
       "match": "R32-06",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Tanya",
       "match": "R32-07",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Tanya",
       "match": "R32-08",
-      "winner": ""
+      "winner": "BEL"
     },
     {
       "person": "Tanya",
       "match": "R32-09",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Tanya",
       "match": "R32-10",
-      "winner": ""
+      "winner": "CIV"
     },
     {
       "person": "Tanya",
       "match": "R32-11",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Tanya",
       "match": "R32-12",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Tanya",
       "match": "R32-13",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Tanya",
       "match": "R32-14",
-      "winner": ""
+      "winner": "EGY"
     },
     {
       "person": "Tanya",
       "match": "R32-15",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "person": "Tanya",
       "match": "R32-16",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Tanya",
       "match": "R16-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Tanya",
       "match": "R16-02",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "person": "Tanya",
       "match": "R16-03",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Tanya",
       "match": "R16-04",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Tanya",
       "match": "R16-05",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Tanya",
       "match": "R16-06",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Tanya",
       "match": "R16-07",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Tanya",
       "match": "R16-08",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Tanya",
       "match": "QF-01",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "person": "Tanya",
       "match": "QF-02",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Tanya",
       "match": "QF-03",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Tanya",
       "match": "QF-04",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Tanya",
       "match": "SF-01",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "person": "Tanya",
       "match": "SF-02",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Tanya",
       "match": "FINAL-01",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Jess",
@@ -4292,7 +4292,7 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Marcus",
       "match": "R32-03",
-      "winner": ""
+      "winner": "CAN"
     },
     {
       "person": "Marcus",
@@ -4442,12 +4442,89 @@ window.WORLD_CUP_BRACKET = {
         "team": "NOR",
         "result": "",
         "points": 0
+      },
+      {
+        "person": "Changsu",
+        "team": "JPN",
+        "result": "",
+        "points": 0
+      },
+      {
+        "person": "Vishakha",
+        "team": "NOR",
+        "result": "",
+        "points": 0
+      },
+      {
+        "person": "Sergio",
+        "team": "MAR",
+        "result": "",
+        "points": 0
+      },
+      {
+        "person": "Wojciech",
+        "team": "POR",
+        "result": "",
+        "points": 0
+      },
+      {
+        "person": "Jeremy",
+        "team": "POR",
+        "result": "",
+        "points": 0
+      },
+      {
+        "person": "Tanya",
+        "team": "MAR",
+        "result": "",
+        "points": 0
+      },
+      {
+        "person": "Ryan",
+        "team": "NOR",
+        "result": "",
+        "points": 0
       }
     ],
     "standings": [
       {
+        "person": "Changsu",
+        "team": "JPN",
+        "points": 0
+      },
+      {
+        "person": "Jeremy",
+        "team": "POR",
+        "points": 0
+      },
+      {
         "person": "Matt M",
         "team": "NOR",
+        "points": 0
+      },
+      {
+        "person": "Ryan",
+        "team": "NOR",
+        "points": 0
+      },
+      {
+        "person": "Sergio",
+        "team": "MAR",
+        "points": 0
+      },
+      {
+        "person": "Tanya",
+        "team": "MAR",
+        "points": 0
+      },
+      {
+        "person": "Vishakha",
+        "team": "NOR",
+        "points": 0
+      },
+      {
+        "person": "Wojciech",
+        "team": "POR",
         "points": 0
       }
     ]

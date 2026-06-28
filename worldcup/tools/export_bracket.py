@@ -116,7 +116,7 @@ def clean_code(value: object) -> str:
     if pd.isna(value):
         return ""
     text = str(value).strip().upper()
-    return "" if text in {"NAN", "NONE"} else text
+    return "" if text in {"NAN", "NONE", "NP"} else text
 
 
 def read_sheet(sheet_name: str) -> pd.DataFrame:
