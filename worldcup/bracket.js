@@ -91,40 +91,227 @@ function renderParticipant(score) {
 function renderBracket(target, options) {
   const split = bracketHalves();
   target.innerHTML = `
-    <div class="legacy-bracket ${options.mode === "participant" ? "is-participant" : "is-source"}">
-      ${roundHeader("Round of 32", "Top half")}
-      ${firstRoundNames(split.top.R32)}
-      ${firstRoundTeams(split.top.R32, options)}
-      ${statusRow(split.top.R32, options, "r32")}
+    ${desktopBracket(split, options)}
+    ${mobileBracket(split, options)}
+  `;
+}
 
-      ${advancerRow(split.top.R32, options, "r16")}
-      ${statusRow(split.top.R16, options, "r16")}
-
-      ${advancerRow(split.top.R16, options, "qf")}
-      ${statusRow(split.top.QF, options, "qf")}
-
-      ${advancerRow(split.top.QF, options, "sf")}
-      ${statusRow(split.top.SF, options, "sf")}
-
-      ${singleAdvancer(split.top.SF[0], options, "finalist")}
-      ${winnerBlock(split.final, options)}
-      ${singleAdvancer(split.bottom.SF[0], options, "finalist")}
-
-      ${statusRow(split.bottom.SF, options, "sf")}
-      ${advancerRow(split.bottom.QF, options, "sf")}
-
-      ${statusRow(split.bottom.QF, options, "qf")}
-      ${advancerRow(split.bottom.R16, options, "qf")}
-
-      ${statusRow(split.bottom.R16, options, "r16")}
-      ${advancerRow(split.bottom.R32, options, "r16")}
-
-      ${statusRow(split.bottom.R32, options, "r32")}
-      ${firstRoundTeams(split.bottom.R32, options)}
-      ${firstRoundNames(split.bottom.R32)}
-      ${roundHeader("Round of 32", "Bottom half")}
+function desktopBracket(split, options) {
+  return `
+    <div class="game-bracket ${options.mode === "participant" ? "is-participant" : "is-source"}">
+      <div class="game-half is-top">
+        ${desktopRound("Top Half · Round of 32", split.top.R32, options, "r32")}
+        ${desktopRound("Round of 16", split.top.R16, options, "r16")}
+        ${desktopRound("Quarterfinals", split.top.QF, options, "qf")}
+        ${desktopRound("Semifinal", split.top.SF, options, "sf")}
+      </div>
+      ${desktopFinal(split.final, options)}
+      <div class="game-half is-bottom">
+        ${desktopRound("Semifinal", split.bottom.SF, options, "sf")}
+        ${desktopRound("Quarterfinals", split.bottom.QF, options, "qf")}
+        ${desktopRound("Round of 16", split.bottom.R16, options, "r16")}
+        ${desktopRound("Bottom Half · Round of 32", split.bottom.R32, options, "r32")}
+      </div>
     </div>
   `;
+}
+
+function desktopRound(label, matches, options, stage) {
+  const span = 8 / matches.length;
+  return `
+    <div class="game-round is-${stage}">
+      <div class="game-row">
+        ${matches
+          .map(
+            (match) => `
+              <div class="game-node" style="grid-column: span ${span}">
+                ${desktopMatchCard(match, options, stage)}
+              </div>
+            `,
+          )
+          .join("")}
+      </div>
+    </div>
+  `;
+}
+
+function desktopFinal(match, options) {
+  return `
+    <div class="game-final">
+      <div class="game-final-stage">
+        <div class="game-champion">
+          <div class="game-champion-label">
+            ${mobileTrophy()}
+            <span>Champion</span>
+          </div>
+          ${desktopChampionPill(advancerFor(match, options), pickStatus(match, advancerFor(match, options)))}
+        </div>
+        <div class="game-final-card">
+          ${desktopMatchCard(match, options, "final")}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function desktopMatchCard(match, options, stage) {
+  const slots = matchParticipants(match, options);
+  const code = advancerFor(match, options);
+  const status = options.mode === "participant" ? pickStatus(match, code) : match.winner ? "official" : "pending";
+  return `
+    <article class="game-match-card is-${stage} is-${status}">
+      <div class="game-team-row">
+        ${desktopTeamSlot(match, slots[0], options)}
+        ${desktopTeamSlot(match, slots[1], options)}
+      </div>
+    </article>
+  `;
+}
+
+function desktopTeamSlot(match, code, options) {
+  const item = team(code);
+  const status = tileState(match, code, options);
+  return `
+    <div class="game-team-slot is-${status}" title="${escapeAttr(item.name)}">
+      ${item.flag ? `<span class="game-flag" style="--flag-image: url('${item.flag}')"></span>` : `<span class="game-shield"></span>`}
+      <strong>${code || "TBD"}</strong>
+    </div>
+  `;
+}
+
+function desktopChampionPill(code, status) {
+  const item = team(code);
+  return `
+    <div class="game-champion-pill is-${status}" title="${escapeAttr(item.name)}">
+      ${item.flag ? `<span class="game-flag" style="--flag-image: url('${item.flag}')"></span>` : `<span class="game-shield"></span>`}
+      <strong>${code || "TBD"}</strong>
+    </div>
+  `;
+}
+
+function mobileBracket(split, options) {
+  return `
+    <div class="mobile-bracket ${options.mode === "participant" ? "is-participant" : "is-source"}">
+      <div class="mobile-board">
+        <div class="mobile-half is-top">
+          ${mobileQuarter(split.top.R32.slice(0, 4), split.top.R16.slice(0, 2), split.top.QF[0], options)}
+          ${mobileQuarter(split.top.R32.slice(4, 8), split.top.R16.slice(2, 4), split.top.QF[1], options)}
+          ${mobileRound("Semifinal", split.top.SF, options, "sf")}
+        </div>
+        ${mobileFinal(split.final, options)}
+        <div class="mobile-half is-bottom">
+          ${mobileRound("Semifinal", split.bottom.SF, options, "sf")}
+          ${mobileQuarter(split.bottom.R32.slice(0, 4), split.bottom.R16.slice(0, 2), split.bottom.QF[0], options, true)}
+          ${mobileQuarter(split.bottom.R32.slice(4, 8), split.bottom.R16.slice(2, 4), split.bottom.QF[1], options, true)}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function mobileQuarter(r32Matches, r16Matches, qfMatch, options, reverse = false) {
+  const rounds = [
+    mobileRound("Round of 32", r32Matches, options, "r32"),
+    mobileRound("Round of 16", r16Matches, options, "r16"),
+    mobileRound("Quarterfinal", [qfMatch], options, "qf"),
+  ];
+  return `<div class="mobile-quarter">${(reverse ? rounds.reverse() : rounds).join("")}</div>`;
+}
+
+function mobileRound(label, matches, options, stage) {
+  const span = 4 / matches.length;
+  return `
+    <div class="mobile-round is-${stage}">
+      <div class="mobile-row">
+        ${matches
+          .map(
+            (match) => `
+              <div class="mobile-node" style="grid-column: span ${span}">
+                ${mobileMatchCard(match, options, stage)}
+              </div>
+            `,
+          )
+          .join("")}
+      </div>
+    </div>
+  `;
+}
+
+function mobileFinal(match, options) {
+  return `
+    <div class="mobile-final">
+      <div class="mobile-final-card">
+        ${mobileMatchCard(match, options, "final")}
+        <div class="mobile-champion">
+          ${mobileTrophy()}
+          <span>Champion</span>
+          ${mobileChampionPill(advancerFor(match, options), pickStatus(match, advancerFor(match, options)))}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function mobileMatchCard(match, options, stage) {
+  const slots = matchParticipants(match, options);
+  const code = advancerFor(match, options);
+  const status = options.mode === "participant" ? pickStatus(match, code) : match.winner ? "official" : "pending";
+  return `
+    <article class="mobile-match-card is-${stage} is-${status}">
+      <div class="mobile-team-row">
+        ${mobileTeamSlot(match, slots[0], options)}
+        ${mobileTeamSlot(match, slots[1], options)}
+      </div>
+    </article>
+  `;
+}
+
+function mobileStatusLabel(match, code, options) {
+  if (options.mode === "source") return match.winner || "Awaiting";
+  if (!code) return "No pick";
+  if (!match.winner) return "Pending";
+  return code === match.winner ? `+${match.points}` : "Out";
+}
+
+function mobileTeamSlot(match, code, options) {
+  const item = team(code);
+  const status = tileState(match, code, options);
+  return `
+    <div class="mobile-team-slot is-${status}" title="${escapeAttr(item.name)}">
+      ${item.flag ? `<span class="mobile-flag" style="--flag-image: url('${item.flag}')"></span>` : `<span class="mobile-shield"></span>`}
+      <strong>${code || "TBD"}</strong>
+    </div>
+  `;
+}
+
+function mobileChampionPill(code, status) {
+  const item = team(code);
+  return `
+    <div class="mobile-champion-pill is-${status}" title="${escapeAttr(item.name)}">
+      ${item.flag ? `<span class="mobile-flag" style="--flag-image: url('${item.flag}')"></span>` : `<span class="mobile-shield"></span>`}
+      <strong>${code || "TBD"}</strong>
+    </div>
+  `;
+}
+
+function mobileTrophy() {
+  return `
+    <svg class="mobile-trophy" viewBox="0 0 64 64" aria-hidden="true">
+      <path d="M20 8h24v8h10v8c0 10-6 17-14 18a14 14 0 0 1-6 4v7h9v6H21v-6h9v-7a14 14 0 0 1-6-4C16 41 10 34 10 24v-8h10V8Zm24 12v14c4-2 6-6 6-12v-2h-6ZM14 20v2c0 6 2 10 6 12V20h-6Z" />
+    </svg>
+  `;
+}
+
+function matchParticipants(match, options) {
+  const feeders = bracketData.matches
+    .filter((candidate) => candidate.nextMatch === match.id)
+    .sort((a, b) => a.nextSlot.localeCompare(b.nextSlot));
+  if (options.mode === "participant" && feeders.length) {
+    return feeders.map((feeder) => advancerFor(feeder, options));
+  }
+  if (match.team1 || match.team2) return [match.team1, match.team2];
+  if (feeders.length) return feeders.map((feeder) => advancerFor(feeder, options));
+  return ["", ""];
 }
 
 function bracketHalves() {
@@ -208,7 +395,7 @@ function winnerBlock(match, options) {
   const code = advancerFor(match, options);
   return `
     <div class="winner-stage">
-      <span>${options.mode === "participant" ? "Champion Pick" : "Champion"}</span>
+      <span>Champion</span>
       ${flagTile(code, pickStatus(match, code), "winner")}
     </div>
   `;
@@ -248,9 +435,14 @@ function tileState(match, code, options) {
     return code === match.winner ? "official" : "dead";
   }
   const pick = pickFor(options.person, match.id);
-  if (!pick) return "pending";
-  if (!match.winner) return code === pick ? "pick" : "alive";
-  if (code === match.winner) return "correct";
+  if (!match.winner) {
+    if (code === pick) return eliminatedTeams().has(code) ? "dead" : "pick";
+    return eliminatedTeams().has(code) ? "dead" : "alive";
+  }
+  if (!pick) return code === match.winner ? "official" : "dead";
+  if (code === pick && pick === match.winner) return "correct";
+  if (code === pick) return "wrong";
+  if (code === match.winner) return "official";
   return "dead";
 }
 

@@ -346,7 +346,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team1",
       "team1": "RSA",
       "team2": "CAN",
-      "winner": ""
+      "winner": "CAN"
     },
     {
       "id": "R32-04",
@@ -539,7 +539,7 @@ window.WORLD_CUP_BRACKET = {
       "points": 2,
       "nextMatch": "QF-01",
       "nextSlot": "team2",
-      "team1": "",
+      "team1": "CAN",
       "team2": "",
       "winner": ""
     },
@@ -1337,12 +1337,12 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Britton",
       "match": "R32-01",
-      "winner": ""
+      "winner": "GER"
     },
     {
       "person": "Britton",
       "match": "R32-02",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Britton",
@@ -1352,142 +1352,142 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Britton",
       "match": "R32-04",
-      "winner": ""
+      "winner": "NED"
     },
     {
       "person": "Britton",
       "match": "R32-05",
-      "winner": ""
+      "winner": "POR"
     },
     {
       "person": "Britton",
       "match": "R32-06",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Britton",
       "match": "R32-07",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Britton",
       "match": "R32-08",
-      "winner": ""
+      "winner": "BEL"
     },
     {
       "person": "Britton",
       "match": "R32-09",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Britton",
       "match": "R32-10",
-      "winner": ""
+      "winner": "NOR"
     },
     {
       "person": "Britton",
       "match": "R32-11",
-      "winner": ""
+      "winner": "ECU"
     },
     {
       "person": "Britton",
       "match": "R32-12",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Britton",
       "match": "R32-13",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Britton",
       "match": "R32-14",
-      "winner": ""
+      "winner": "EGY"
     },
     {
       "person": "Britton",
       "match": "R32-15",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "person": "Britton",
       "match": "R32-16",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Britton",
       "match": "R16-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Britton",
       "match": "R16-02",
-      "winner": ""
+      "winner": "NED"
     },
     {
       "person": "Britton",
       "match": "R16-03",
-      "winner": ""
+      "winner": "POR"
     },
     {
       "person": "Britton",
       "match": "R16-04",
-      "winner": ""
+      "winner": "BEL"
     },
     {
       "person": "Britton",
       "match": "R16-05",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Britton",
       "match": "R16-06",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Britton",
       "match": "R16-07",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Britton",
       "match": "R16-08",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "person": "Britton",
       "match": "QF-01",
-      "winner": ""
+      "winner": "NED"
     },
     {
       "person": "Britton",
       "match": "QF-02",
-      "winner": ""
+      "winner": "POR"
     },
     {
       "person": "Britton",
       "match": "QF-03",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Britton",
       "match": "QF-04",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Britton",
       "match": "SF-01",
-      "winner": ""
+      "winner": "NED"
     },
     {
       "person": "Britton",
       "match": "SF-02",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Britton",
       "match": "FINAL-01",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Dawn",
@@ -4444,6 +4444,12 @@ window.WORLD_CUP_BRACKET = {
         "points": 0
       },
       {
+        "person": "Britton",
+        "team": "POR",
+        "result": "",
+        "points": 0
+      },
+      {
         "person": "Changsu",
         "team": "JPN",
         "result": "",
@@ -4487,6 +4493,11 @@ window.WORLD_CUP_BRACKET = {
       }
     ],
     "standings": [
+      {
+        "person": "Britton",
+        "team": "POR",
+        "points": 0
+      },
       {
         "person": "Changsu",
         "team": "JPN",
