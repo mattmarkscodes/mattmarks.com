@@ -89,146 +89,144 @@ function renderParticipant(score) {
 }
 
 function renderBracket(target, options) {
+  const split = bracketHalves();
   target.innerHTML = `
-    <div class="bracket-board-ltr ${options.mode === "participant" ? "is-participant" : "is-source"}">
-      ${roundOrder.map((round) => roundColumn(round, options)).join("")}
-      ${championColumn(options)}
+    <div class="legacy-bracket ${options.mode === "participant" ? "is-participant" : "is-source"}">
+      ${roundHeader("Round of 32", "Top half")}
+      ${firstRoundNames(split.top.R32)}
+      ${firstRoundTeams(split.top.R32, options)}
+      ${statusRow(split.top.R32, options, "r32")}
+
+      ${advancerRow(split.top.R32, options, "r16")}
+      ${statusRow(split.top.R16, options, "r16")}
+
+      ${advancerRow(split.top.R16, options, "qf")}
+      ${statusRow(split.top.QF, options, "qf")}
+
+      ${advancerRow(split.top.QF, options, "sf")}
+      ${statusRow(split.top.SF, options, "sf")}
+
+      ${singleAdvancer(split.top.SF[0], options, "finalist")}
+      ${winnerBlock(split.final, options)}
+      ${singleAdvancer(split.bottom.SF[0], options, "finalist")}
+
+      ${statusRow(split.bottom.SF, options, "sf")}
+      ${advancerRow(split.bottom.QF, options, "sf")}
+
+      ${statusRow(split.bottom.QF, options, "qf")}
+      ${advancerRow(split.bottom.R16, options, "qf")}
+
+      ${statusRow(split.bottom.R16, options, "r16")}
+      ${advancerRow(split.bottom.R32, options, "r16")}
+
+      ${statusRow(split.bottom.R32, options, "r32")}
+      ${firstRoundTeams(split.bottom.R32, options)}
+      ${firstRoundNames(split.bottom.R32)}
+      ${roundHeader("Round of 32", "Bottom half")}
     </div>
   `;
-  bindBracketScroll(target);
 }
 
-function roundColumn(roundId, options) {
-  const round = roundById.get(roundId);
-  const matches = matchesByRound.get(roundId) || [];
+function bracketHalves() {
+  return {
+    top: {
+      R32: matchesByRound.get("R32").slice(0, 8),
+      R16: matchesByRound.get("R16").slice(0, 4),
+      QF: matchesByRound.get("QF").slice(0, 2),
+      SF: matchesByRound.get("SF").slice(0, 1),
+    },
+    bottom: {
+      R32: matchesByRound.get("R32").slice(8, 16),
+      R16: matchesByRound.get("R16").slice(4, 8),
+      QF: matchesByRound.get("QF").slice(2, 4),
+      SF: matchesByRound.get("SF").slice(1, 2),
+    },
+    final: matchesByRound.get("FINAL")[0],
+  };
+}
+
+function roundHeader(roundName, halfName) {
   return `
-    <section class="round-column-ltr" data-round="${roundId}">
-      <header class="round-heading-ltr">
-        <span>${round.shortName}</span>
-        <strong>${round.name}</strong>
-      </header>
-      <div class="match-list-ltr">
-        ${matches.map((match) => matchCard(match, options)).join("")}
-      </div>
-    </section>
+    <div class="legacy-round-label">
+      <span>${halfName}</span>
+      <strong>${roundName}</strong>
+    </div>
   `;
 }
 
-function championColumn(options) {
-  const final = (matchesByRound.get("FINAL") || [])[0];
-  const code = advancerFor(final, options);
-  const status = options.mode === "participant" ? pickStatus(final, code) : final?.winner ? "official" : "pending";
+function firstRoundNames(matches) {
   return `
-    <section class="round-column-ltr champion-column-ltr" data-round="CHAMPION">
-      <header class="round-heading-ltr">
-        <span>Winner</span>
-        <strong>${options.mode === "participant" ? "Champion Pick" : "Champion"}</strong>
-      </header>
-      <div class="match-list-ltr">
-        <article class="match-card-ltr champion-card is-${status}">
-          <div class="champion-tile">
-            ${flagTile(code, status, "winner")}
-            <strong>${code || "TBD"}</strong>
-          </div>
-          <div class="time-band is-${status}">
-            <span>${statusLabel(final, code, options)}</span>
-          </div>
-        </article>
-      </div>
-    </section>
+    <div class="legacy-grid name-grid cols-${matches.length}">
+      ${matches
+        .map(
+          (match) => `
+            <div class="name-pair">
+              <span>${match.team1 || "TBD"}</span>
+              <span>${match.team2 || "TBD"}</span>
+            </div>
+          `,
+        )
+        .join("")}
+    </div>
   `;
 }
 
-function matchCard(match, options) {
+function firstRoundTeams(matches, options) {
+  return `
+    <div class="legacy-grid team-grid cols-${matches.length}">
+      ${matches
+        .map(
+          (match) => `
+            <div class="team-pair">
+              ${flagTile(match.team1, tileState(match, match.team1, options))}
+              ${flagTile(match.team2, tileState(match, match.team2, options))}
+            </div>
+          `,
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function advancerRow(matches, options, stage) {
+  return `
+    <div class="legacy-grid advancer-grid cols-${matches.length}">
+      ${matches.map((match) => flagTile(advancerFor(match, options), pickStatus(match, advancerFor(match, options)), stage)).join("")}
+    </div>
+  `;
+}
+
+function singleAdvancer(match, options, stage) {
+  return `
+    <div class="single-advancer">
+      ${flagTile(advancerFor(match, options), pickStatus(match, advancerFor(match, options)), stage)}
+    </div>
+  `;
+}
+
+function winnerBlock(match, options) {
+  const code = advancerFor(match, options);
+  return `
+    <div class="winner-stage">
+      <span>${options.mode === "participant" ? "Champion Pick" : "Champion"}</span>
+      ${flagTile(code, pickStatus(match, code), "winner")}
+    </div>
+  `;
+}
+
+function statusRow(matches, options, stage) {
+  return `
+    <div class="legacy-grid status-grid cols-${matches.length}">
+      ${matches.map((match) => statusBand(match, options, stage)).join("")}
+    </div>
+  `;
+}
+
+function statusBand(match, options, stage) {
   const code = advancerFor(match, options);
   const status = options.mode === "participant" ? pickStatus(match, code) : match.winner ? "official" : "pending";
-
-  return `
-    <article class="match-card-ltr is-${status}" data-match="${match.id}">
-      <div class="match-meta-ltr">
-        <span>${match.label}</span>
-        <b>${match.points} pt${match.points === 1 ? "" : "s"}</b>
-      </div>
-      ${options.mode === "participant" ? participantMatchBody(match, options) : sourceMatchBody(match, options)}
-      <div class="time-band is-${status}">
-        <span>${statusLabel(match, code, options)}</span>
-      </div>
-    </article>
-  `;
-}
-
-function sourceMatchBody(match, options) {
-  return `
-    <div class="team-slots-ltr">
-      ${teamSlot(match, match.team1, options)}
-      ${teamSlot(match, match.team2, options)}
-    </div>
-  `;
-}
-
-function participantMatchBody(match, options) {
-  const pick = pickFor(options.person, match.id);
-  const status = pickStatus(match, pick);
-
-  return `
-    <div class="participant-pick-ltr">
-      ${flagTile(pick, status, "pick")}
-      <div>
-        <span>Pick</span>
-        <strong>${pick || "TBD"}</strong>
-      </div>
-    </div>
-    <p class="matchup-caption-ltr">${matchupLabel(match)}</p>
-  `;
-}
-
-function teamSlot(match, code, options) {
-  const item = team(code);
-  return `
-    <div class="team-slot-ltr ${code ? "" : "is-empty"}">
-      ${flagTile(code, tileState(match, code, options))}
-      <span>${code || "TBD"}</span>
-    </div>
-  `;
-}
-
-function matchupLabel(match) {
-  const first = match.team1 || "TBD";
-  const second = match.team2 || "TBD";
-  return `${first} vs ${second}`;
-}
-
-function bindBracketScroll(target) {
-  const scroll = target.classList.contains("bracket-scroll") ? target : target.closest(".bracket-scroll");
-  if (!scroll) return;
-
-  const updateSqueeze = () => {
-    const board = scroll.querySelector(".bracket-board-ltr");
-    if (!board) return;
-
-    const maxScroll = Math.max(1, scroll.scrollWidth - scroll.clientWidth);
-    const squeeze = Math.min(1, scroll.scrollLeft / Math.min(420, maxScroll));
-    const eased = 1 - (1 - squeeze) ** 2;
-    const lerp = (open, compact) => open + (compact - open) * eased;
-
-    board.style.setProperty("--r16-offset", `${lerp(38, 0).toFixed(1)}px`);
-    board.style.setProperty("--r16-gap", `${lerp(54, 10).toFixed(1)}px`);
-    board.style.setProperty("--qf-offset", `${lerp(115, 0).toFixed(1)}px`);
-    board.style.setProperty("--qf-gap", `${lerp(165, 10).toFixed(1)}px`);
-    board.style.setProperty("--sf-offset", `${lerp(275, 0).toFixed(1)}px`);
-    board.style.setProperty("--sf-gap", `${lerp(365, 10).toFixed(1)}px`);
-    board.style.setProperty("--final-offset", `${lerp(595, 0).toFixed(1)}px`);
-    board.style.setProperty("--champion-offset", `${lerp(595, 0).toFixed(1)}px`);
-    scroll.classList.toggle("is-squeezed", eased > 0.35);
-  };
-
-  if (!scroll.dataset.squeezeBound) {
-    scroll.addEventListener("scroll", updateSqueeze, { passive: true });
-    window.addEventListener("resize", updateSqueeze);
-    scroll.dataset.squeezeBound = "true";
-  }
-
-  requestAnimationFrame(updateSqueeze);
+  const label = statusLabel(match, code, options);
+  return `<div class="time-band ${stage} is-${status}"><span>${label}</span></div>`;
 }
 
 function statusLabel(match, code, options) {

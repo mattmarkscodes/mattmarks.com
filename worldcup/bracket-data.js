@@ -370,7 +370,7 @@ window.WORLD_CUP_BRACKET = {
       "points": 1,
       "nextMatch": "R16-03",
       "nextSlot": "team1",
-      "team1": "",
+      "team1": "POR",
       "team2": "CRO",
       "winner": ""
     },
@@ -384,7 +384,7 @@ window.WORLD_CUP_BRACKET = {
       "nextMatch": "R16-03",
       "nextSlot": "team2",
       "team1": "ESP",
-      "team2": "",
+      "team2": "AUT",
       "winner": ""
     },
     {
@@ -410,7 +410,7 @@ window.WORLD_CUP_BRACKET = {
       "nextMatch": "R16-04",
       "nextSlot": "team2",
       "team1": "BEL",
-      "team2": "",
+      "team2": "SEN",
       "winner": ""
     },
     {
@@ -449,7 +449,7 @@ window.WORLD_CUP_BRACKET = {
       "nextMatch": "R16-06",
       "nextSlot": "team1",
       "team1": "MEX",
-      "team2": "",
+      "team2": "ECU",
       "winner": ""
     },
     {
@@ -462,7 +462,7 @@ window.WORLD_CUP_BRACKET = {
       "nextMatch": "R16-06",
       "nextSlot": "team2",
       "team1": "ENG",
-      "team2": "",
+      "team2": "COD",
       "winner": ""
     },
     {
@@ -501,7 +501,7 @@ window.WORLD_CUP_BRACKET = {
       "nextMatch": "R16-08",
       "nextSlot": "team1",
       "team1": "SUI",
-      "team2": "",
+      "team2": "ALG",
       "winner": ""
     },
     {
@@ -513,8 +513,8 @@ window.WORLD_CUP_BRACKET = {
       "points": 1,
       "nextMatch": "R16-08",
       "nextSlot": "team2",
-      "team1": "",
-      "team2": "",
+      "team1": "COL",
+      "team2": "GHA",
       "winner": ""
     },
     {
@@ -3972,157 +3972,157 @@ window.WORLD_CUP_BRACKET = {
     {
       "person": "Ryan",
       "match": "R32-01",
-      "winner": ""
+      "winner": "GER"
     },
     {
       "person": "Ryan",
       "match": "R32-02",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Ryan",
       "match": "R32-03",
-      "winner": ""
+      "winner": "CAN"
     },
     {
       "person": "Ryan",
       "match": "R32-04",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "person": "Ryan",
       "match": "R32-05",
-      "winner": ""
+      "winner": "POR"
     },
     {
       "person": "Ryan",
       "match": "R32-06",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Ryan",
       "match": "R32-07",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Ryan",
       "match": "R32-08",
-      "winner": ""
+      "winner": "SEN"
     },
     {
       "person": "Ryan",
       "match": "R32-09",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Ryan",
       "match": "R32-10",
-      "winner": ""
+      "winner": "NOR"
     },
     {
       "person": "Ryan",
       "match": "R32-11",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Ryan",
       "match": "R32-12",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "person": "Ryan",
       "match": "R32-13",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Ryan",
       "match": "R32-14",
-      "winner": ""
+      "winner": "EGY"
     },
     {
       "person": "Ryan",
       "match": "R32-15",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "person": "Ryan",
       "match": "R32-16",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Ryan",
       "match": "R16-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Ryan",
       "match": "R16-02",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "person": "Ryan",
       "match": "R16-03",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "person": "Ryan",
       "match": "R16-04",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Ryan",
       "match": "R16-05",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Ryan",
       "match": "R16-06",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "person": "Ryan",
       "match": "R16-07",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Ryan",
       "match": "R16-08",
-      "winner": ""
+      "winner": "COL"
     },
     {
       "person": "Ryan",
       "match": "QF-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Ryan",
       "match": "QF-02",
-      "winner": ""
+      "winner": "USA"
     },
     {
       "person": "Ryan",
       "match": "QF-03",
-      "winner": ""
+      "winner": "BRA"
     },
     {
       "person": "Ryan",
       "match": "QF-04",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Ryan",
       "match": "SF-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Ryan",
       "match": "SF-02",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "person": "Ryan",
       "match": "FINAL-01",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "person": "Seeyon",

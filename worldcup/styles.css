@@ -168,6 +168,80 @@ h2 {
   color: var(--ink);
 }
 
+.winner-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+  gap: 18px;
+  align-items: stretch;
+  margin: 8px 0 18px;
+  border: 1px solid var(--ink);
+  background:
+    linear-gradient(135deg, rgba(210, 154, 42, 0.22), rgba(40, 95, 157, 0.08)),
+    #fffdf8;
+  box-shadow: var(--shadow);
+}
+
+.winner-copy,
+.winner-scoreboard {
+  min-width: 0;
+  padding: 20px;
+}
+
+.winner-copy {
+  display: grid;
+  align-content: center;
+  gap: 8px;
+}
+
+.winner-copy h2 {
+  font-size: clamp(1.8rem, 4vw, 4.4rem);
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.winner-copy p:last-child {
+  max-width: 640px;
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-weight: 750;
+}
+
+.winner-scoreboard {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-left: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.winner-scoreboard div {
+  min-width: 0;
+  border-bottom: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  padding: 13px 14px;
+}
+
+.winner-scoreboard div:nth-child(2n + 1) {
+  border-left: 0;
+}
+
+.winner-scoreboard span,
+.winner-scoreboard strong {
+  display: block;
+}
+
+.winner-scoreboard span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.winner-scoreboard strong {
+  margin-top: 6px;
+  font-size: clamp(1rem, 1.7vw, 1.65rem);
+  line-height: 1.05;
+}
+
 .results-section {
   padding: 18px;
   margin: 8px 0 18px;
@@ -1087,6 +1161,7 @@ h2 {
 
   .team-race,
   .ballot-grid,
+  .winner-section,
   .results-grid,
   .simple-consensus-grid,
   .cards-grid {
@@ -1154,10 +1229,32 @@ h2 {
 
   .team-race,
   .ballot-grid,
+  .winner-section,
+  .winner-scoreboard,
   .results-grid,
   .simple-consensus-grid,
   .cards-grid {
     grid-template-columns: 1fr;
+  }
+
+  .winner-copy,
+  .winner-scoreboard {
+    padding: 14px;
+  }
+
+  .winner-scoreboard {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .winner-scoreboard div,
+  .winner-scoreboard div:nth-child(2n + 1) {
+    border-bottom: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .winner-scoreboard div:last-child {
+    border-bottom: 0;
   }
 
   .participant-hero,

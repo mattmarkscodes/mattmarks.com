@@ -4,7 +4,7 @@ const state = {
   group: "A",
 };
 
-const finalGroups = new Set(["A", "B", "C", "D", "E", "F", "G", "H", "I", "L"]);
+const finalGroups = new Set(data.groups.map((group) => group.id));
 
 const teamByCode = new Map();
 data.groups.forEach((group) => {
@@ -17,6 +17,7 @@ data.predictions.forEach((pick) => {
 });
 
 const resultsGrid = document.querySelector("#results-grid");
+const winnerSpotlight = document.querySelector("#winner-spotlight");
 const tabs = document.querySelector("#group-tabs");
 const matrix = document.querySelector("#pick-matrix");
 const leaderboard = document.querySelector("#leaderboard");
@@ -30,11 +31,66 @@ document.querySelector("#max-points").textContent = data.scoring.maxTotal;
 renderAll();
 
 function renderAll() {
+  renderWinner();
   renderResults();
   renderTabs();
   renderMatrix();
   renderLeaderboard();
   renderConsensus();
+}
+
+function renderWinner() {
+  const official = applyTieRanks(data.standings);
+  const winners = official.filter((standing) => standing.competitionRank === 1);
+  const winnerNames = winners.map((standing) => standing.person).join(", ");
+  const topScore = winners[0]?.points ?? 0;
+  const runnerUpScore = official.find((standing) => standing.points < topScore)?.points ?? topScore;
+  const margin = topScore - runnerUpScore;
+  const winnerScore = winners.length === 1 ? scorePerson(winners[0].person) : null;
+  const headline =
+    winners.length === 1
+      ? `${winnerNames} wins the group stage`
+      : `${winnerNames} share the group stage win`;
+  const marginText =
+    winners.length === 1 && margin > 0
+      ? `${margin} point${margin === 1 ? "" : "s"} clear`
+      : "Level at the top";
+
+  winnerSpotlight.innerHTML = `
+    <div class="winner-copy">
+      <p class="eyebrow">Group Stage Complete</p>
+      <h2>${headline}</h2>
+      <p>The final top-two results are locked across all 12 groups.</p>
+    </div>
+    <div class="winner-scoreboard" aria-label="Winner summary">
+      <div>
+        <span>Winner</span>
+        <strong>${winnerNames}</strong>
+      </div>
+      <div>
+        <span>Final Score</span>
+        <strong>${topScore}</strong>
+      </div>
+      <div>
+        <span>Margin</span>
+        <strong>${marginText}</strong>
+      </div>
+      ${
+        winnerScore
+          ? `
+            <div>
+              <span>Correct Teams</span>
+              <strong>${winnerScore.correctTeams}</strong>
+            </div>
+            <div>
+              <span>Exact Spots</span>
+              <strong>${winnerScore.exactPositions}</strong>
+            </div>
+          `
+          : ""
+      }
+    </div>
+  `;
 }
 
 function renderResults() {
