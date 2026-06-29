@@ -169,12 +169,11 @@ function desktopMatchCard(match, options, stage) {
 }
 
 function desktopTeamSlot(match, code, options) {
-  const item = team(code);
-  const status = tileState(match, code, options);
+  const slot = teamSlot(match, code, options);
   return `
-    <div class="game-team-slot is-${status}" title="${escapeAttr(item.name)}">
-      ${item.flag ? `<span class="game-flag" style="--flag-image: url('${item.flag}')"></span>` : `<span class="game-shield"></span>`}
-      <strong>${code || "TBD"}</strong>
+    <div class="game-team-slot is-${slot.status} ${slot.missed ? "is-no-pick" : ""}" title="${escapeAttr(slot.name)}">
+      ${slot.flag ? `<span class="game-flag" style="--flag-image: url('${slot.flag}')"></span>` : `<span class="game-shield"></span>`}
+      <strong>${slot.label}</strong>
     </div>
   `;
 }
@@ -274,12 +273,11 @@ function mobileStatusLabel(match, code, options) {
 }
 
 function mobileTeamSlot(match, code, options) {
-  const item = team(code);
-  const status = tileState(match, code, options);
+  const slot = teamSlot(match, code, options);
   return `
-    <div class="mobile-team-slot is-${status}" title="${escapeAttr(item.name)}">
-      ${item.flag ? `<span class="mobile-flag" style="--flag-image: url('${item.flag}')"></span>` : `<span class="mobile-shield"></span>`}
-      <strong>${code || "TBD"}</strong>
+    <div class="mobile-team-slot is-${slot.status} ${slot.missed ? "is-no-pick" : ""}" title="${escapeAttr(slot.name)}">
+      ${slot.flag ? `<span class="mobile-flag" style="--flag-image: url('${slot.flag}')"></span>` : `<span class="mobile-shield"></span>`}
+      <strong>${slot.label}</strong>
     </div>
   `;
 }
@@ -307,7 +305,7 @@ function matchParticipants(match, options) {
     .filter((candidate) => candidate.nextMatch === match.id)
     .sort((a, b) => a.nextSlot.localeCompare(b.nextSlot));
   if (options.mode === "participant" && feeders.length) {
-    return feeders.map((feeder) => advancerFor(feeder, options));
+    return feeders.map((feeder) => participantFeederSlot(feeder, options));
   }
   if (match.team1 || match.team2) return [match.team1, match.team2];
   if (feeders.length) return feeders.map((feeder) => advancerFor(feeder, options));
@@ -426,6 +424,42 @@ function statusLabel(match, code, options) {
 function advancerFor(match, options) {
   if (!match) return "";
   return options.mode === "participant" ? pickFor(options.person, match.id) : match.winner;
+}
+
+function participantFeederSlot(match, options) {
+  const pick = advancerFor(match, options);
+  if (pick || !match.winner) return pick;
+  return {
+    code: "",
+    label: "NP",
+    name: "No pick locked",
+    status: "missing",
+    missed: true,
+  };
+}
+
+function teamSlot(match, value, options) {
+  if (typeof value === "object" && value !== null) {
+    const item = team(value.code);
+    return {
+      code: value.code || "",
+      label: value.label || value.code || "TBD",
+      name: value.name || item.name,
+      flag: item.flag,
+      status: value.status || tileState(match, value.code || "", options),
+      missed: Boolean(value.missed),
+    };
+  }
+
+  const item = team(value);
+  return {
+    code: value || "",
+    label: value || "TBD",
+    name: item.name,
+    flag: item.flag,
+    status: tileState(match, value, options),
+    missed: false,
+  };
 }
 
 function tileState(match, code, options) {

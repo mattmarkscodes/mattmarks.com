@@ -34,6 +34,26 @@ select {
   font: inherit;
 }
 
+.page-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.page-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  border: 1px solid #454545;
+  border-radius: 999px;
+  padding: 0 12px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 .bracket-header,
 main {
   width: min(100% - 28px, 920px);
@@ -392,6 +412,11 @@ main {
   border-color: rgba(255, 100, 78, 0.72);
 }
 
+.game-match-card.is-missing {
+  border-color: rgba(255, 100, 78, 0.52);
+  background: #231b1a;
+}
+
 .game-team-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -452,6 +477,15 @@ main {
 .game-team-slot.is-wrong .game-flag,
 .game-team-slot.is-wrong .game-shield {
   box-shadow: 0 0 0 2px var(--red);
+}
+
+.game-team-slot.is-no-pick .game-shield {
+  background: #6f3831;
+  box-shadow: 0 0 0 2px rgba(255, 100, 78, 0.72);
+}
+
+.game-team-slot.is-no-pick strong {
+  color: #ffb4a8;
 }
 
 .game-team-slot.is-dead {
@@ -904,6 +938,11 @@ main {
   border-color: rgba(255, 100, 78, 0.72);
 }
 
+.mobile-match-card.is-missing {
+  border-color: rgba(255, 100, 78, 0.52);
+  background: #231b1a;
+}
+
 .mobile-team-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -964,6 +1003,15 @@ main {
 .mobile-team-slot.is-wrong .mobile-flag,
 .mobile-team-slot.is-wrong .mobile-shield {
   box-shadow: 0 0 0 2px var(--red);
+}
+
+.mobile-team-slot.is-no-pick .mobile-shield {
+  background: #6f3831;
+  box-shadow: 0 0 0 2px rgba(255, 100, 78, 0.72);
+}
+
+.mobile-team-slot.is-no-pick strong {
+  color: #ffb4a8;
 }
 
 .mobile-team-slot.is-dead {

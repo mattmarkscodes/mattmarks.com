@@ -3,93 +3,95 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>World Cup Group Stage Tracker</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>World Cup Bracket Tracker</title>
+    <link rel="stylesheet" href="bracket.css?v=20260629-2" />
   </head>
   <body>
-    <header class="app-header">
+    <header class="bracket-header">
+      <nav class="page-nav" aria-label="Site navigation">
+        <a href="group-stage.html">Group Stage</a>
+      </nav>
       <div>
-        <p class="eyebrow">2026 World Cup</p>
-        <h1>Group Stage</h1>
+        <h1>2026 FIFA World Cup Bracket Challenge</h1>
+        <p>Round of 32 through the final</p>
       </div>
-      <div class="summary-strip" aria-label="Group stage summary">
+      <div class="summary-strip" aria-label="Bracket summary">
         <div>
-          <strong id="group-count">0</strong>
-          <span>groups updated</span>
+          <strong id="matches-complete">0</strong>
+          <span>matches scored</span>
         </div>
         <div>
-          <strong id="person-count">0</strong>
-          <span>participants</span>
+          <strong id="bracket-people">0</strong>
+          <span>brackets</span>
         </div>
         <div>
-          <strong id="leader-points">0</strong>
+          <strong id="bracket-lead">0</strong>
           <span>leading score</span>
         </div>
         <div>
-          <strong id="max-points">0</strong>
+          <strong id="bracket-max">0</strong>
           <span>max points</span>
         </div>
       </div>
     </header>
 
     <main>
-      <section class="winner-section" id="winner-spotlight" aria-label="Group stage winner"></section>
-
-      <section class="results-section" aria-labelledby="results-title">
+      <section class="source-section" aria-labelledby="source-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Final Table</p>
-            <h2 id="results-title">Group Standings</h2>
+            <p class="eyebrow">Source of Truth</p>
+            <h2 id="source-title">Official Bracket</h2>
           </div>
+          <p id="source-note"></p>
         </div>
-        <div class="results-grid" id="results-grid"></div>
+        <div class="bracket-scroll" id="source-bracket"></div>
       </section>
 
-      <section class="matrix-section" aria-labelledby="matrix-title">
+      <section class="participant-section" aria-labelledby="participant-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Every Ballot</p>
-            <h2 id="matrix-title">Pick Matrix</h2>
+            <p class="eyebrow">Every Submitted Bracket</p>
+            <h2 id="participant-title">Participant View</h2>
           </div>
+          <label class="participant-picker">
+            <span>Bracket</span>
+            <select id="person-select"></select>
+          </label>
         </div>
-        <div class="matrix-controls" aria-label="Pick Matrix controls">
-          <div class="group-tabs" id="group-tabs"></div>
-          <div class="pick-legend" aria-label="Pick status legend">
-            <span class="is-exact">Correct position</span>
-            <span class="is-advancing">Correct team, wrong position</span>
-            <span class="is-wrong">Outside top two</span>
-          </div>
-        </div>
-        <div class="table-wrap">
-          <table class="pick-matrix" id="pick-matrix"></table>
-        </div>
+        <div class="participant-summary" id="participant-summary"></div>
+        <div class="bracket-scroll" id="participant-bracket"></div>
       </section>
 
       <section class="leaderboard-section" aria-labelledby="leaderboard-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Pool Standings</p>
-            <h2 id="leaderboard-title">Leaderboard</h2>
-          </div>
-          <p id="leaderboard-note"></p>
-        </div>
-        <div class="table-wrap leaderboard-wrap">
-          <table class="leaderboard" id="leaderboard"></table>
+        <div class="leaderboard-card">
+          <h2 id="leaderboard-title">Bracket Leaderboard</h2>
+          <ol class="leaderboard-list" id="leaderboard"></ol>
         </div>
       </section>
 
-      <section class="simple-consensus-section" aria-labelledby="consensus-title">
+      <section class="insights-section" aria-labelledby="insights-title">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Pool Consensus</p>
-            <h2 id="consensus-title">Most Popular Picks</h2>
+            <p class="eyebrow">Side Quest</p>
+            <h2 id="insights-title">Dark Horse</h2>
           </div>
         </div>
-        <div class="simple-consensus-grid" id="simple-consensus-grid"></div>
+        <div class="insights-grid">
+          <div class="table-wrap">
+            <table class="dark-horse" id="dark-horse"></table>
+          </div>
+          <article class="consensus-panel">
+            <header>
+              <p class="eyebrow">Pool Consensus</p>
+              <h3>Champion Picks</h3>
+            </header>
+            <div id="champion-consensus"></div>
+          </article>
+        </div>
       </section>
     </main>
 
-    <script src="predictions-data.js"></script>
-    <script src="app.js"></script>
+    <script src="bracket-data.js?v=20260629-6"></script>
+    <script src="bracket.js?v=20260629-1"></script>
   </body>
 </html>

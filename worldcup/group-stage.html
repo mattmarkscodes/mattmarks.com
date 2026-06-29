@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>World Cup Group Stage Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <nav class="page-nav" aria-label="Site navigation">
+        <a href="index.html">Bracket</a>
+      </nav>
+      <div>
+        <p class="eyebrow">2026 World Cup</p>
+        <h1>Group Stage</h1>
+      </div>
+      <div class="summary-strip" aria-label="Group stage summary">
+        <div>
+          <strong id="group-count">0</strong>
+          <span>groups updated</span>
+        </div>
+        <div>
+          <strong id="person-count">0</strong>
+          <span>participants</span>
+        </div>
+        <div>
+          <strong id="leader-points">0</strong>
+          <span>leading score</span>
+        </div>
+        <div>
+          <strong id="max-points">0</strong>
+          <span>max points</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="winner-section" id="winner-spotlight" aria-label="Group stage winner"></section>
+
+      <section class="results-section" aria-labelledby="results-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Final Table</p>
+            <h2 id="results-title">Group Standings</h2>
+          </div>
+        </div>
+        <div class="results-grid" id="results-grid"></div>
+      </section>
+
+      <section class="matrix-section" aria-labelledby="matrix-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Every Ballot</p>
+            <h2 id="matrix-title">Pick Matrix</h2>
+          </div>
+        </div>
+        <div class="matrix-controls" aria-label="Pick Matrix controls">
+          <div class="group-tabs" id="group-tabs"></div>
+          <div class="pick-legend" aria-label="Pick status legend">
+            <span class="is-exact">Correct position</span>
+            <span class="is-advancing">Correct team, wrong position</span>
+            <span class="is-wrong">Outside top two</span>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="pick-matrix" id="pick-matrix"></table>
+        </div>
+      </section>
+
+      <section class="leaderboard-section" aria-labelledby="leaderboard-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Pool Standings</p>
+            <h2 id="leaderboard-title">Leaderboard</h2>
+          </div>
+          <p id="leaderboard-note"></p>
+        </div>
+        <div class="table-wrap leaderboard-wrap">
+          <table class="leaderboard" id="leaderboard"></table>
+        </div>
+      </section>
+
+      <section class="simple-consensus-section" aria-labelledby="consensus-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Pool Consensus</p>
+            <h2 id="consensus-title">Most Popular Picks</h2>
+          </div>
+        </div>
+        <div class="simple-consensus-grid" id="simple-consensus-grid"></div>
+      </section>
+    </main>
+
+    <script src="predictions-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

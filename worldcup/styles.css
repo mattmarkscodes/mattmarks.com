@@ -42,6 +42,21 @@ button {
   cursor: pointer;
 }
 
+.page-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0 12px;
+  background: rgba(255, 253, 248, 0.78);
+  color: var(--blue);
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 .app-header,
 main {
   width: min(1520px, calc(100% - 32px));
