@@ -1139,9 +1139,11 @@ main {
   min-height: 62px;
   counter-increment: leaderboard;
   padding: 18px 10px 18px 50px;
-  cursor: default;
+  cursor: pointer;
   background: var(--blue-3);
-  transition: transform 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
 }
 
 .leaderboard-row:nth-child(1),
@@ -1211,6 +1213,21 @@ main {
 .leaderboard-row:hover {
   z-index: 2;
   transform: scaleX(1.025) scaleY(1.02);
+}
+
+.leaderboard-row:focus-visible {
+  z-index: 3;
+  outline: 2px solid var(--gold);
+  outline-offset: -4px;
+}
+
+.leaderboard-row.is-selected {
+  box-shadow: inset 4px 0 0 var(--gold);
+}
+
+.leaderboard-row.is-selected::before {
+  background: var(--gold);
+  color: #151515;
 }
 
 .insights-grid {

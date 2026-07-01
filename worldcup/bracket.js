@@ -25,11 +25,26 @@ bracketData.predictions.forEach((pick) => {
 
 const sourceBracket = document.querySelector("#source-bracket");
 const participantBracket = document.querySelector("#participant-bracket");
+const participantSection = document.querySelector(".participant-section");
 const personSelect = document.querySelector("#person-select");
 const participantSummary = document.querySelector("#participant-summary");
 const leaderboard = document.querySelector("#leaderboard");
 const darkHorse = document.querySelector("#dark-horse");
 const championConsensus = document.querySelector("#champion-consensus");
+
+leaderboard.addEventListener("click", (event) => {
+  const row = event.target.closest(".leaderboard-row[data-person]");
+  if (!row) return;
+  selectParticipant(row.dataset.person, { scroll: true });
+});
+
+leaderboard.addEventListener("keydown", (event) => {
+  if (!["Enter", " "].includes(event.key)) return;
+  const row = event.target.closest(".leaderboard-row[data-person]");
+  if (!row) return;
+  event.preventDefault();
+  selectParticipant(row.dataset.person, { scroll: true });
+});
 
 renderAll();
 
@@ -60,9 +75,17 @@ function renderPersonPicker() {
     .map((person) => `<option value="${escapeAttr(person)}" ${person === state.person ? "selected" : ""}>${person}</option>`)
     .join("");
   personSelect.addEventListener("change", () => {
-    state.person = personSelect.value;
-    renderAll();
+    selectParticipant(personSelect.value);
   }, { once: true });
+}
+
+function selectParticipant(person, options = {}) {
+  if (!picksByPerson.has(person)) return;
+  state.person = person;
+  renderAll();
+  if (!options.scroll) return;
+  participantSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  personSelect.focus({ preventScroll: true });
 }
 
 function renderParticipant(score) {
@@ -502,7 +525,13 @@ function renderLeaderboard(scores) {
   leaderboard.innerHTML = rows
     .map(
       (row) => `
-        <li class="leaderboard-row ${row.competitionRank <= 3 ? "is-top-three" : ""}">
+        <li
+          class="leaderboard-row ${row.competitionRank <= 3 ? "is-top-three" : ""} ${row.person === state.person ? "is-selected" : ""}"
+          data-person="${escapeAttr(row.person)}"
+          role="button"
+          tabindex="0"
+          aria-label="View ${escapeAttr(row.person)} bracket"
+        >
           <mark>${row.displayRank}. ${row.person}</mark>
           <small>
             <span class="score">${row.total}</span> points

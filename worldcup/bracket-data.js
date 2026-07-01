@@ -329,7 +329,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team2",
       "team1": "FRA",
       "team2": "SWE",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "id": "R32-03",
@@ -355,7 +355,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team2",
       "team1": "NED",
       "team2": "MAR",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "id": "R32-05",
@@ -433,7 +433,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team2",
       "team1": "CIV",
       "team2": "NOR",
-      "winner": ""
+      "winner": "NOR"
     },
     {
       "id": "R32-11",
@@ -446,7 +446,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team1",
       "team1": "MEX",
       "team2": "ECU",
-      "winner": ""
+      "winner": "MEX"
     },
     {
       "id": "R32-12",
@@ -523,7 +523,7 @@ window.WORLD_CUP_BRACKET = {
       "nextMatch": "QF-01",
       "nextSlot": "team1",
       "team1": "PAR",
-      "team2": "",
+      "team2": "FRA",
       "winner": ""
     },
     {
@@ -536,7 +536,7 @@ window.WORLD_CUP_BRACKET = {
       "nextMatch": "QF-01",
       "nextSlot": "team2",
       "team1": "CAN",
-      "team2": "",
+      "team2": "MAR",
       "winner": ""
     },
     {
@@ -575,7 +575,7 @@ window.WORLD_CUP_BRACKET = {
       "nextMatch": "QF-03",
       "nextSlot": "team1",
       "team1": "BRA",
-      "team2": "",
+      "team2": "NOR",
       "winner": ""
     },
     {
@@ -587,7 +587,7 @@ window.WORLD_CUP_BRACKET = {
       "points": 2,
       "nextMatch": "QF-03",
       "nextSlot": "team2",
-      "team1": "",
+      "team1": "MEX",
       "team2": "",
       "winner": ""
     },
