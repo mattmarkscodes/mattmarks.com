@@ -1275,6 +1275,39 @@ tbody tr:last-child td {
   border-bottom: 0;
 }
 
+tbody tr.is-eliminated th,
+tbody tr.is-eliminated td {
+  color: rgba(255, 255, 255, 0.58);
+}
+
+tbody tr.is-eliminated .team-pill {
+  opacity: 0.58;
+}
+
+.dark-horse-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.dark-horse-status.is-active {
+  border-color: rgba(136, 250, 79, 0.32);
+  color: #c9ffb0;
+}
+
+.dark-horse-status.is-eliminated {
+  border-color: rgba(255, 100, 78, 0.42);
+  color: #ff9a8b;
+}
+
 .empty-cell,
 .empty-copy {
   color: #cccccc;

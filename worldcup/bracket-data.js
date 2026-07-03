@@ -368,7 +368,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team1",
       "team1": "POR",
       "team2": "CRO",
-      "winner": ""
+      "winner": "POR"
     },
     {
       "id": "R32-06",
@@ -381,7 +381,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team2",
       "team1": "ESP",
       "team2": "AUT",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "id": "R32-07",
@@ -498,7 +498,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team1",
       "team1": "SUI",
       "team2": "ALG",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "id": "R32-16",
@@ -548,8 +548,8 @@ window.WORLD_CUP_BRACKET = {
       "points": 2,
       "nextMatch": "QF-02",
       "nextSlot": "team1",
-      "team1": "",
-      "team2": "",
+      "team1": "POR",
+      "team2": "ESP",
       "winner": ""
     },
     {
@@ -613,7 +613,7 @@ window.WORLD_CUP_BRACKET = {
       "points": 2,
       "nextMatch": "QF-04",
       "nextSlot": "team2",
-      "team1": "",
+      "team1": "SUI",
       "team2": "",
       "winner": ""
     },
@@ -3816,7 +3816,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Eileen",
         "team": "CRO",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3846,7 +3846,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Changsu",
         "team": "JPN",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3858,7 +3858,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Kate",
         "team": "SWE",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3918,7 +3918,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Seeyon",
         "team": "JPN",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       }
     ],
@@ -3926,91 +3926,109 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Britton",
         "team": "POR",
+        "result": "",
         "points": 0
       },
       {
         "person": "Cathy",
         "team": "COL",
+        "result": "",
         "points": 0
       },
       {
         "person": "Changsu",
         "team": "JPN",
+        "result": "Eliminated",
         "points": 0
       },
       {
         "person": "Dawn",
         "team": "USA",
+        "result": "",
         "points": 0
       },
       {
         "person": "Derek",
         "team": "NOR",
+        "result": "",
         "points": 0
       },
       {
         "person": "Eileen",
         "team": "CRO",
+        "result": "Eliminated",
         "points": 0
       },
       {
         "person": "Jeremy",
         "team": "POR",
+        "result": "",
         "points": 0
       },
       {
         "person": "Jess",
         "team": "MEX",
+        "result": "",
         "points": 0
       },
       {
         "person": "Kate",
         "team": "SWE",
+        "result": "Eliminated",
         "points": 0
       },
       {
         "person": "Matt M",
         "team": "NOR",
+        "result": "",
         "points": 0
       },
       {
         "person": "Ryan",
         "team": "NOR",
+        "result": "",
         "points": 0
       },
       {
         "person": "Seeyon",
         "team": "JPN",
+        "result": "Eliminated",
         "points": 0
       },
       {
         "person": "Sergio",
         "team": "MAR",
+        "result": "",
         "points": 0
       },
       {
         "person": "Tanya",
         "team": "MAR",
+        "result": "",
         "points": 0
       },
       {
         "person": "Tomiwa",
         "team": "POR",
+        "result": "",
         "points": 0
       },
       {
         "person": "Vishakha",
         "team": "NOR",
+        "result": "",
         "points": 0
       },
       {
         "person": "Wojciech",
         "team": "POR",
+        "result": "",
         "points": 0
       },
       {
         "person": "Zarai",
         "team": "POR",
+        "result": "",
         "points": 0
       }
     ]

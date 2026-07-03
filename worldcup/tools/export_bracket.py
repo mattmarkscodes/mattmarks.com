@@ -240,7 +240,15 @@ def dark_horse() -> dict[str, object]:
         )
 
     standings = sorted(
-        [{"person": pick["person"], "team": pick["team"], "points": pick["points"]} for pick in picks],
+        [
+            {
+                "person": pick["person"],
+                "team": pick["team"],
+                "result": pick["result"],
+                "points": pick["points"],
+            }
+            for pick in picks
+        ],
         key=lambda item: (-int(item["points"]), str(item["person"])),
     )
     return {"picks": picks, "standings": standings}

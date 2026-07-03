@@ -1,7 +1,7 @@
 const bracketData = window.WORLD_CUP_BRACKET;
 
 const state = {
-  person: bracketData.people[0] || "",
+  person: "",
 };
 
 const roundOrder = bracketData.scoring.rounds.map((round) => round.id);
@@ -50,8 +50,10 @@ renderAll();
 
 function renderAll() {
   const scores = scoresByPerson();
+  const rankedRows = leaderboardRows(scores);
+  if (!state.person) state.person = rankedRows[0]?.person || "";
   const scoredMatches = bracketData.matches.filter((match) => match.winner).length;
-  const leader = [...scores.values()].sort((a, b) => b.total - a.total)[0];
+  const leader = rankedRows[0];
 
   document.querySelector("#matches-complete").textContent = scoredMatches;
   document.querySelector("#bracket-people").textContent = bracketData.people.length;
@@ -62,21 +64,21 @@ function renderAll() {
       ? "Awaiting knockout results"
       : `${scoredMatches} of ${bracketData.matches.length} matches have official winners`;
 
-  renderPersonPicker();
+  renderPersonPicker(rankedRows);
   renderBracket(sourceBracket, { mode: "source" });
   renderParticipant(scores.get(state.person));
-  renderLeaderboard(scores);
+  renderLeaderboard(rankedRows);
   renderDarkHorse();
   renderChampionConsensus();
 }
 
-function renderPersonPicker() {
-  personSelect.innerHTML = bracketData.people
-    .map((person) => `<option value="${escapeAttr(person)}" ${person === state.person ? "selected" : ""}>${person}</option>`)
+function renderPersonPicker(rows) {
+  personSelect.innerHTML = rows
+    .map((row) => `<option value="${escapeAttr(row.person)}" ${row.person === state.person ? "selected" : ""}>${row.person}</option>`)
     .join("");
-  personSelect.addEventListener("change", () => {
+  personSelect.onchange = () => {
     selectParticipant(personSelect.value);
-  }, { once: true });
+  };
 }
 
 function selectParticipant(person, options = {}) {
@@ -515,13 +517,7 @@ function flagTile(code, status = "pending", stage = "") {
   `;
 }
 
-function renderLeaderboard(scores) {
-  const rows = applyTieRanks(
-    [...scores.values()].sort(
-      (a, b) => b.total - a.total || b.possible - a.possible || a.person.localeCompare(b.person),
-    ),
-  );
-
+function renderLeaderboard(rows) {
   leaderboard.innerHTML = rows
     .map(
       (row) => `
@@ -543,6 +539,14 @@ function renderLeaderboard(scores) {
     .join("");
 }
 
+function leaderboardRows(scores) {
+  return applyTieRanks(
+    [...scores.values()].sort(
+      (a, b) => b.total - a.total || b.possible - a.possible || a.person.localeCompare(b.person),
+    ),
+  );
+}
+
 function renderDarkHorse() {
   const rows = bracketData.darkHorse?.standings || [];
   darkHorse.innerHTML = `
@@ -550,6 +554,7 @@ function renderDarkHorse() {
       <tr>
         <th>Name</th>
         <th>Pick</th>
+        <th>Status</th>
         <th>Points</th>
       </tr>
     </thead>
@@ -558,17 +563,29 @@ function renderDarkHorse() {
         rows.length
           ? rows
               .map((row) => `
-                <tr>
+                <tr class="${darkHorseStatus(row.result).eliminated ? "is-eliminated" : ""}">
                   <th>${row.person}</th>
                   <td>${teamPill(row.team)}</td>
+                  <td>${darkHorseBadge(row.result)}</td>
                   <td><strong>${row.points}</strong></td>
                 </tr>
               `)
               .join("")
-          : `<tr><td colspan="3" class="empty-cell">Awaiting dark horse picks</td></tr>`
+          : `<tr><td colspan="4" class="empty-cell">Awaiting dark horse picks</td></tr>`
       }
     </tbody>
   `;
+}
+
+function darkHorseStatus(result) {
+  const label = (result || "Active").trim();
+  const eliminated = /^(eliminated|out|dead)$/i.test(label);
+  return { label, eliminated };
+}
+
+function darkHorseBadge(result) {
+  const status = darkHorseStatus(result);
+  return `<span class="dark-horse-status ${status.eliminated ? "is-eliminated" : "is-active"}">${status.label}</span>`;
 }
 
 function renderChampionConsensus() {
