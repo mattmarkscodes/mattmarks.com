@@ -524,7 +524,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team1",
       "team1": "PAR",
       "team2": "FRA",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "id": "R16-02",
@@ -537,7 +537,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team2",
       "team1": "CAN",
       "team2": "MAR",
-      "winner": ""
+      "winner": "MAR"
     },
     {
       "id": "R16-03",
@@ -626,8 +626,8 @@ window.WORLD_CUP_BRACKET = {
       "points": 4,
       "nextMatch": "SF-01",
       "nextSlot": "team1",
-      "team1": "",
-      "team2": "",
+      "team1": "FRA",
+      "team2": "MAR",
       "winner": ""
     },
     {
