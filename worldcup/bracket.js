@@ -563,7 +563,7 @@ function renderDarkHorse() {
         rows.length
           ? rows
               .map((row) => `
-                <tr class="${darkHorseStatus(row.result).eliminated ? "is-eliminated" : ""}">
+                <tr class="${darkHorseStatus(row.result).inactive ? "is-eliminated" : ""}">
                   <th>${row.person}</th>
                   <td>${teamPill(row.team)}</td>
                   <td>${darkHorseBadge(row.result)}</td>
@@ -580,12 +580,15 @@ function renderDarkHorse() {
 function darkHorseStatus(result) {
   const label = (result || "Active").trim();
   const eliminated = /^(eliminated|out|dead)$/i.test(label);
-  return { label, eliminated };
+  const ineligible = /^(ineligible|invalid)$/i.test(label);
+  const inactive = eliminated || ineligible;
+  return { label, eliminated, ineligible, inactive };
 }
 
 function darkHorseBadge(result) {
   const status = darkHorseStatus(result);
-  return `<span class="dark-horse-status ${status.eliminated ? "is-eliminated" : "is-active"}">${status.label}</span>`;
+  const className = status.ineligible ? "is-ineligible" : status.eliminated ? "is-eliminated" : "is-active";
+  return `<span class="dark-horse-status ${className}">${status.label}</span>`;
 }
 
 function renderChampionConsensus() {

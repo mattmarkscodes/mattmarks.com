@@ -1308,6 +1308,11 @@ tbody tr.is-eliminated .team-pill {
   color: #ff9a8b;
 }
 
+.dark-horse-status.is-ineligible {
+  border-color: rgba(255, 210, 91, 0.42);
+  color: #ffdc83;
+}
+
 .empty-cell,
 .empty-copy {
   color: #cccccc;

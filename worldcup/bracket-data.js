@@ -576,7 +576,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team1",
       "team1": "BRA",
       "team2": "NOR",
-      "winner": ""
+      "winner": "NOR"
     },
     {
       "id": "R16-06",
@@ -652,7 +652,7 @@ window.WORLD_CUP_BRACKET = {
       "points": 4,
       "nextMatch": "SF-02",
       "nextSlot": "team1",
-      "team1": "",
+      "team1": "NOR",
       "team2": "",
       "winner": ""
     },
@@ -3840,7 +3840,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Dawn",
         "team": "USA",
-        "result": "",
+        "result": "Ineligible",
         "points": 0
       },
       {
@@ -3888,7 +3888,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Cathy",
         "team": "COL",
-        "result": "",
+        "result": "Ineligible",
         "points": 0
       },
       {
@@ -3906,7 +3906,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Jess",
         "team": "MEX",
-        "result": "",
+        "result": "Ineligible",
         "points": 0
       },
       {
@@ -3932,7 +3932,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Cathy",
         "team": "COL",
-        "result": "",
+        "result": "Ineligible",
         "points": 0
       },
       {
@@ -3944,7 +3944,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Dawn",
         "team": "USA",
-        "result": "",
+        "result": "Ineligible",
         "points": 0
       },
       {
@@ -3968,7 +3968,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Jess",
         "team": "MEX",
-        "result": "",
+        "result": "Ineligible",
         "points": 0
       },
       {
