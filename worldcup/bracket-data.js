@@ -602,7 +602,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team1",
       "team1": "ARG",
       "team2": "EGY",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "id": "R16-08",
@@ -615,7 +615,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team2",
       "team1": "SUI",
       "team2": "COL",
-      "winner": ""
+      "winner": "SUI"
     },
     {
       "id": "QF-01",
@@ -665,8 +665,8 @@ window.WORLD_CUP_BRACKET = {
       "points": 4,
       "nextMatch": "SF-02",
       "nextSlot": "team2",
-      "team1": "",
-      "team2": "",
+      "team1": "ARG",
+      "team2": "SUI",
       "winner": ""
     },
     {
@@ -3888,7 +3888,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Cathy",
         "team": "COL",
-        "result": "Ineligible",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3932,7 +3932,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Cathy",
         "team": "COL",
-        "result": "Ineligible",
+        "result": "Eliminated",
         "points": 0
       },
       {
