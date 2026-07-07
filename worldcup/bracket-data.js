@@ -550,7 +550,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team1",
       "team1": "POR",
       "team2": "ESP",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "id": "R16-04",
@@ -563,7 +563,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team2",
       "team1": "USA",
       "team2": "BEL",
-      "winner": ""
+      "winner": "BEL"
     },
     {
       "id": "R16-05",
@@ -639,8 +639,8 @@ window.WORLD_CUP_BRACKET = {
       "points": 4,
       "nextMatch": "SF-01",
       "nextSlot": "team2",
-      "team1": "",
-      "team2": "",
+      "team1": "ESP",
+      "team2": "BEL",
       "winner": ""
     },
     {
@@ -3834,7 +3834,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Britton",
         "team": "POR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3864,7 +3864,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Tomiwa",
         "team": "POR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3876,13 +3876,13 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Zarai",
         "team": "POR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
         "person": "Wojciech",
         "team": "POR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3894,7 +3894,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Jeremy",
         "team": "POR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3906,7 +3906,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Jess",
         "team": "MEX",
-        "result": "Ineligible",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3926,7 +3926,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Britton",
         "team": "POR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3962,13 +3962,13 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Jeremy",
         "team": "POR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
         "person": "Jess",
         "team": "MEX",
-        "result": "Ineligible",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -4010,7 +4010,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Tomiwa",
         "team": "POR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -4022,13 +4022,13 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Wojciech",
         "team": "POR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
         "person": "Zarai",
         "team": "POR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       }
     ]
