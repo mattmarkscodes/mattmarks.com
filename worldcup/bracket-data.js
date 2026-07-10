@@ -628,7 +628,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team1",
       "team1": "FRA",
       "team2": "MAR",
-      "winner": ""
+      "winner": "FRA"
     },
     {
       "id": "QF-02",
@@ -641,7 +641,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team2",
       "team1": "ESP",
       "team2": "BEL",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "id": "QF-03",
@@ -678,8 +678,8 @@ window.WORLD_CUP_BRACKET = {
       "points": 8,
       "nextMatch": "FINAL-01",
       "nextSlot": "team1",
-      "team1": "",
-      "team2": "",
+      "team1": "FRA",
+      "team2": "ESP",
       "winner": ""
     },
     {
@@ -3870,7 +3870,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Sergio",
         "team": "MAR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3900,7 +3900,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Tanya",
         "team": "MAR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3998,13 +3998,13 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Sergio",
         "team": "MAR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
         "person": "Tanya",
         "team": "MAR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
