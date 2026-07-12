@@ -654,7 +654,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team1",
       "team1": "NOR",
       "team2": "ENG",
-      "winner": ""
+      "winner": "ENG"
     },
     {
       "id": "QF-04",
@@ -691,7 +691,7 @@ window.WORLD_CUP_BRACKET = {
       "points": 8,
       "nextMatch": "FINAL-01",
       "nextSlot": "team2",
-      "team1": "",
+      "team1": "ENG",
       "team2": "",
       "winner": ""
     },
@@ -3822,13 +3822,13 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Derek",
         "team": "NOR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
         "person": "Matt M",
         "team": "NOR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3840,7 +3840,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Dawn",
         "team": "USA",
-        "result": "Ineligible",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3852,7 +3852,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Vishakha",
         "team": "NOR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3912,7 +3912,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Ryan",
         "team": "NOR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3944,13 +3944,13 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Dawn",
         "team": "USA",
-        "result": "Ineligible",
+        "result": "Eliminated",
         "points": 0
       },
       {
         "person": "Derek",
         "team": "NOR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -3980,13 +3980,13 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Matt M",
         "team": "NOR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
         "person": "Ryan",
         "team": "NOR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
@@ -4016,7 +4016,7 @@ window.WORLD_CUP_BRACKET = {
       {
         "person": "Vishakha",
         "team": "NOR",
-        "result": "",
+        "result": "Eliminated",
         "points": 0
       },
       {
