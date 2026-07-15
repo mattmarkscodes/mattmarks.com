@@ -680,7 +680,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team1",
       "team1": "FRA",
       "team2": "ESP",
-      "winner": ""
+      "winner": "ESP"
     },
     {
       "id": "SF-02",
