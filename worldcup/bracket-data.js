@@ -693,7 +693,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "team2",
       "team1": "ENG",
       "team2": "ARG",
-      "winner": ""
+      "winner": "ARG"
     },
     {
       "id": "FINAL-01",
@@ -704,8 +704,8 @@ window.WORLD_CUP_BRACKET = {
       "points": 12,
       "nextMatch": "",
       "nextSlot": "",
-      "team1": "",
-      "team2": "",
+      "team1": "ESP",
+      "team2": "ARG",
       "winner": ""
     }
   ],
