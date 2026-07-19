@@ -1126,6 +1126,70 @@ main {
   padding: 20px;
 }
 
+.winner-celebration {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  margin: 0 16px 18px;
+  border: 1px solid rgba(248, 214, 109, 0.55);
+  border-radius: 10px;
+  padding: 16px;
+  background:
+    linear-gradient(135deg, rgba(248, 214, 109, 0.22), rgba(136, 250, 79, 0.08)),
+    #181c26;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 14px 34px rgba(0, 0, 0, 0.24);
+}
+
+.winner-celebration[hidden] {
+  display: none;
+}
+
+.winner-celebration-trophy {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(248, 214, 109, 0.16);
+}
+
+.winner-celebration-trophy .mobile-trophy {
+  width: 42px;
+  height: 42px;
+  fill: var(--gold);
+}
+
+.winner-celebration-copy {
+  min-width: 0;
+}
+
+.winner-celebration-copy span {
+  display: block;
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.winner-celebration-copy strong {
+  display: block;
+  margin-top: 4px;
+  color: #ffffff;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+  line-height: 1.05;
+}
+
+.winner-celebration-copy p {
+  margin-top: 6px;
+  color: #dedede;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
 .leaderboard-list {
   margin: 0;
   padding: 0;
@@ -1415,5 +1479,11 @@ tbody tr.is-eliminated .team-pill {
 
   .leaderboard-row mark {
     padding-right: 120px;
+  }
+
+  .winner-celebration {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
   }
 }

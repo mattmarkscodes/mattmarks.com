@@ -29,6 +29,7 @@ const participantSection = document.querySelector(".participant-section");
 const personSelect = document.querySelector("#person-select");
 const participantSummary = document.querySelector("#participant-summary");
 const leaderboard = document.querySelector("#leaderboard");
+const winnerCelebration = document.querySelector("#winner-celebration");
 const darkHorse = document.querySelector("#dark-horse");
 const championConsensus = document.querySelector("#champion-consensus");
 
@@ -67,6 +68,7 @@ function renderAll() {
   renderPersonPicker(rankedRows);
   renderBracket(sourceBracket, { mode: "source" });
   renderParticipant(scores.get(state.person));
+  renderWinnerCelebration(rankedRows, scoredMatches);
   renderLeaderboard(rankedRows);
   renderDarkHorse();
   renderChampionConsensus();
@@ -539,6 +541,37 @@ function renderLeaderboard(rows) {
     .join("");
 }
 
+function renderWinnerCelebration(rows, scoredMatches) {
+  if (!winnerCelebration) return;
+  const bracketComplete = scoredMatches === bracketData.matches.length;
+  const winners = rows.filter((row) => row.competitionRank === 1);
+  if (!bracketComplete || !winners.length) {
+    winnerCelebration.hidden = true;
+    winnerCelebration.innerHTML = "";
+    return;
+  }
+
+  const finalWinner = matchById.get("FINAL-01")?.winner || "";
+  const winnerNames = winners.map((row) => row.person).join(" & ");
+  const championPicks = [...new Set(winners.map((row) => pickFor(row.person, "FINAL-01")).filter(Boolean))];
+  const championLabel = championPicks.length === 1 ? championPicks[0] : "Multiple champions";
+  const title = winners.length === 1 ? "Bracket Champion" : "Bracket Champions";
+  const verb = winners.length === 1 ? "wins" : "win";
+
+  winnerCelebration.hidden = false;
+  winnerCelebration.innerHTML = `
+    <div class="winner-celebration-trophy">
+      ${mobileTrophy()}
+    </div>
+    <div class="winner-celebration-copy">
+      <span>${title}</span>
+      <strong>${escapeHtml(winnerNames)} ${verb} it all</strong>
+      <p>${winners[0].total} points &middot; picked ${escapeHtml(championLabel)} as champion</p>
+    </div>
+    ${teamPill(finalWinner)}
+  `;
+}
+
 function leaderboardRows(scores) {
   return applyTieRanks(
     [...scores.values()].sort(
@@ -708,4 +741,8 @@ function teamPill(code) {
 
 function escapeAttr(value) {
   return String(value).replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;");
+}
+
+function escapeHtml(value) {
+  return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 }

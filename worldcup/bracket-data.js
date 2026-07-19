@@ -706,7 +706,7 @@ window.WORLD_CUP_BRACKET = {
       "nextSlot": "",
       "team1": "ESP",
       "team2": "ARG",
-      "winner": ""
+      "winner": "ESP"
     }
   ],
   "predictions": [
