@@ -1,0 +1,7 @@
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/glance/sports"
+  to = "/.netlify/functions/glance-sports"
+  status = 200
